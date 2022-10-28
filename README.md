@@ -25,7 +25,7 @@
 ### Примеры использования
 
 В репозитории находятся папки
-```
+```python
 PROJECT_NAME = 'skillbox-computer-vision-project' # Название проекта
 LOCAL_PROJ_PATH = f'D:/{PROJECT_NAME}' # Путь к папке проекта на локальном компьютере
 COLAB_PROJ_PATH = f'/content/{PROJECT_NAME}' # Путь к папке проекта в сессионном хранилище Google Colab
