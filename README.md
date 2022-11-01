@@ -1,5 +1,7 @@
 # Skillbox. Дипломная работа по компьютерному зрению. 
-Распознавание эмоций человека.
+# Распознавание эмоций человека
+
+The background color should be `#ffffff` for light mode and `#0d1117` for dark mode.
 
 https://www.kaggle.com/c/skillbox-computer-vision-project
 
