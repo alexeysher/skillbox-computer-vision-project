@@ -212,7 +212,9 @@ COLAB_GD_PROJ_PATH = f'/content/drive/MyDrive/{PROJECT_NAME}' # Путь к па
 
 В целях оптимального использования вычислительных ресурсов платформы и сокращения времени выполнения пайплайна все этапы выполняются с использованием механизма параллельных вычислений, реализуемого с помощью пакета [IPython Parallel](https://ipyparallel.readthedocs.io/en/latest/). Количество паралллельных движков *(англ. engines)*.
 
-<details><summary>Поля [csv-файла результата](./Model.drawio.svg) (в примерах `train_face_extraction.csv`)</summary>
+[csv-файла результата](image_preprocessing/train_face_extraction.csv)
+
+<details><summary>Поля [csv-файла результата](image_preprocessing/train_face_extraction.csv) (в примерах `train_face_extraction.csv`)</summary>
 <p>
     
 - `emotion` - название эмоции;
