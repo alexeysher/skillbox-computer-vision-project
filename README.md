@@ -221,7 +221,7 @@ COLAB_GD_PROJ_PATH = f'/content/drive/MyDrive/{PROJECT_NAME}' # Путь к па
 
 В целях оптимального использования вычислительных ресурсов платформы и сокращения времени выполнения пайплайна все этапы выполняются с использованием механизма параллельных вычислений, реализуемого с помощью пакета [IPython Parallel](https://ipyparallel.readthedocs.io/en/latest/). Количество паралллельных движков *(англ. engines)*.
 
-<details><summary>Пример настройки этапа</summary>
+<details><summary>Пример настройки паплайна</summary>
 <p>
     
 ```python
