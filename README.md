@@ -12,7 +12,8 @@
 
 <details><summary>Пример описания эмоций для создания первого типа модели</summary>
 <p>
-    
+    ![image](https://user-images.githubusercontent.com/107345313/200141231-ec5e34d5-bccc-4fdc-87ef-b620a2bc2e9b.png)
+
 ```python
 EMOTIONS = (
     'anger', # гнев, злость
