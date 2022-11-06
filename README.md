@@ -434,14 +434,76 @@ $$S_i = Sa_i Wa + St_i Wt $$
 #### 3.4. Обучение полносвязной модели (`model_on_top_training`)
 На этапе производится обучение полносвязной модели. Отдельное обучение полносвязной модели необходимо для исключения, т.к. при веса полносвязной модели инициализируются случайным образом. Поэтому при обучении модели может возникнуть большой градиент, который может "сломать" базовую модель. С другой стороны слишком длительное обучения полносвязной модели может последующее обучение результирующей модели.
 
+<details><summary>Пример графиков обучения модели</summary>
+    <p align="center" style="text-align:center">
+        <table>
+            <tr>
+                <td>
+                    <p align="center"><b>learning rate</b></p>
+                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170093-3d28ac64-bcfe-4aeb-8243-271303872633.svg>
+                </td>
+                <td>
+                    <p align="center"><b>train loss</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170094-b3c32734-027d-4831-a2c3-a4cd956424ca.svg>
+                </td>
+                <td>
+                    <p align="center"><b>train accuracy</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170092-d547e63b-448a-4b73-acd6-42827687b311.svg>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p align="center"><b>test public score</b></p>
+                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170090-a199f4c4-2f33-4eb1-b9f5-9f89e6c0ad59.svg>
+                </td>
+                <td>
+                    <p align="center"><b>test private score</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170091-200846f3-b1dc-46b0-b549-fd27ba4ee368.svg>
+                </td>
+                <td>
+                    <p align="center"><b>test score</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170088-2f8de71d-5ea8-49b0-b2ce-092b09e64455.svg>
+                </td>
+            </tr>
+        </table>
+    </p>
+</details>
+
 #### 3.5. Тонкая настройка модели (`model_fine_tuning`)
 Тонкая настройка модели
 
 <details><summary>Пример графиков обучения модели</summary>
-    <p align="center">
-        
-![epoch_lr](https://user-images.githubusercontent.com/107345313/200162240-69f4a03f-af7e-486d-b595-3f939339dc95.svg){ width=60% }
-
+    <p align="center" style="text-align:center">
+        <table>
+            <tr>
+                <td>
+                    <p align="center"><b>learning rate</b></p>
+                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162240-69f4a03f-af7e-486d-b595-3f939339dc95.svg>
+                </td>
+                <td>
+                    <p align="center"><b>train loss</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162241-0b956ee6-865d-46c4-b08c-38bf741f724b.svg>
+                </td>
+                <td>
+                    <p align="center"><b>train accuracy</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162239-91d315bb-b643-4827-989b-260e99879b2b.svg>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p align="center"><b>test public score</b></p>
+                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162238-31226353-fb24-4fa6-a855-2dbf3f531e37.svg>
+                </td>
+                <td>
+                    <p align="center"><b>test private score</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162237-9004ca30-26a0-4f29-99c0-8fbf5272491d.svg>
+                </td>
+                <td>
+                    <p align="center"><b>test score</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162235-4a95bdf5-2bee-4e6e-82d1-951092ea14b4.svg>
+                </td>
+            </tr>
+        </table>
     </p>
 </details>
 
