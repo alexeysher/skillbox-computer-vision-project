@@ -438,13 +438,16 @@ $$S_i = Sa_i Wa + St_i Wt $$
 Тонкая настройка модели
 
 <details><summary>Пример графиков обучения модели</summary>
-<p>
-![epoch_lr (1)](https://user-images.githubusercontent.com/107345313/200159519-fbd6f90a-afbd-439c-9db5-d495e29f47de.svg)
-![epoch_loss (1)](https://user-images.githubusercontent.com/107345313/200159520-0c972feb-fb5c-4cef-9f90-dd87613caba0.svg)
-![epoch_sparse_categorical_accuracy (1)](https://user-images.githubusercontent.com/107345313/200159523-bfeb5727-7781-48ff-8c90-aa0f3d34a049.svg)
-![epoch_test_private_score (1)](https://user-images.githubusercontent.com/107345313/200159528-3e0a2dcc-88df-467b-a4a3-c5d0b85e94a8.svg)
-![epoch_test_public_score (2)](https://user-images.githubusercontent.com/107345313/200159529-9a752861-d919-43eb-96c5-20c6dd6c220e.svg)
-![epoch_test_score (1)](https://user-images.githubusercontent.com/107345313/200159540-9b7e64b3-7dbb-4e7f-a547-d84475758583.svg)
+<p align="center">
+    <figure>
+        <img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162240-69f4a03f-af7e-486d-b595-3f939339dc95.svg alt=epoch_lr>
+    </figure>
+<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162241-0b956ee6-865d-46c4-b08c-38bf741f724b.svg alt="epoch_loss">
+<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162235-4a95bdf5-2bee-4e6e-82d1-951092ea14b4.svg alt="epoch_test_score">
+<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162238-31226353-fb24-4fa6-a855-2dbf3f531e37.svg alt="epoch_test_private_score">
+<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162237-9004ca30-26a0-4f29-99c0-8fbf5272491d.svg alt="epoch_test_public_score">
+<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162239-91d315bb-b643-4827-989b-260e99879b2b.svg alt="epoch_sparse_categorical_accuracy">
+        
 </p>
 </details>
 
