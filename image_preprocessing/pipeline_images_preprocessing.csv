@@ -1,4 +1,0 @@
-stage,params,platform,start_time,update_time,state
-train_face_extraction,"{'path': 'train_faces', 'engines': 8, 'batch_size': 125, 'scale_factor': 0.709, 'min_face_size': 128, 'process_csv': 'train_face_extraction_process.csv', 'result_csv': 'train_face_extraction.csv'}",local,2022-10-23 10:19:52.047153,2022-10-23 11:27:25.583180,complete
-test_face_extraction,"{'path': 'test_faces', 'engines': 8, 'batch_size': 125, 'scale_factor': 0.709, 'min_face_size': 128, 'process_csv': 'test_face_extraction_process.csv', 'result_csv': 'test_face_extraction.csv'}",local,2022-10-23 11:27:25.743022,2022-10-23 11:36:22.142532,complete
-train_balancing,"{'path': 'train_balanced_faces', 'engines': 8, 'batch_size': 125, 'process_csv': 'train_balancing_process.csv', 'result_csv': 'train_balancing.csv'}",local,2022-10-23 11:36:22.309349,2022-10-23 11:39:11.561157,complete
