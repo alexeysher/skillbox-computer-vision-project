@@ -438,17 +438,11 @@ $$S_i = Sa_i Wa + St_i Wt $$
 Тонкая настройка модели
 
 <details><summary>Пример графиков обучения модели</summary>
-<p align="center">
-    <figure>
-        <img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162240-69f4a03f-af7e-486d-b595-3f939339dc95.svg alt=epoch_lr>
-    </figure>
-<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162241-0b956ee6-865d-46c4-b08c-38bf741f724b.svg alt="epoch_loss">
-<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162235-4a95bdf5-2bee-4e6e-82d1-951092ea14b4.svg alt="epoch_test_score">
-<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162238-31226353-fb24-4fa6-a855-2dbf3f531e37.svg alt="epoch_test_private_score">
-<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162237-9004ca30-26a0-4f29-99c0-8fbf5272491d.svg alt="epoch_test_public_score">
-<img width=300 height=200 src=https://user-images.githubusercontent.com/107345313/200162239-91d315bb-b643-4827-989b-260e99879b2b.svg alt="epoch_sparse_categorical_accuracy">
+    <p align="center">
         
-</p>
+![epoch_lr](https://user-images.githubusercontent.com/107345313/200162240-69f4a03f-af7e-486d-b595-3f939339dc95.svg){ width=60% }
+
+    </p>
 </details>
 
 #### 3.6. Тестирование работы модели (`model_deploy_test`)
