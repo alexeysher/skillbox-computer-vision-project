@@ -431,6 +431,41 @@ $$S_i = Sa_i Wa + St_i Wt $$
 #### 3.3. Выбор лучшей полносвязной модели (`model_on_top_selection`)
 Целью данного этапа является определение конфигурации полносвязной модели, которая показывает
 
+<details><summary>Пример графиков обучения модели</summary>
+    <p align="center" style="text-align:center">
+        <table>
+            <tr>
+                <td>
+                    <p align="center"><b>learning rate</b></p>
+                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170698-ac024401-65f8-4583-ae99-cbbf797ec7e1.svg>
+                </td>
+                <td>
+                    <p align="center"><b>train loss</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170699-00e42311-c1c5-4038-8494-be6eda9d24f0.svg>
+                </td>
+                <td>
+                    <p align="center"><b>train accuracy</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170697-5901a5bd-27d5-47b8-96a8-87783a184d6d.svg>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p align="center"><b>test public score</b></p>
+                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170696-372b2f6f-8cde-4d56-b39a-db42b02fd6f0.svg>
+                </td>
+                <td>
+                    <p align="center"><b>test private score</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170692-644e7ac6-7a01-4226-a448-f3c5fd2364ba.svg>
+                </td>
+                <td>
+                    <p align="center"><b>test score</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170691-85d0656e-82d3-4ce9-a4f8-d6bc419cb1a1.svg>
+                </td>
+            </tr>
+        </table>
+    </p>
+</details>
+
 #### 3.4. Обучение полносвязной модели (`model_on_top_training`)
 На этапе производится обучение полносвязной модели. Отдельное обучение полносвязной модели необходимо для исключения, т.к. при веса полносвязной модели инициализируются случайным образом. Поэтому при обучении модели может возникнуть большой градиент, который может "сломать" базовую модель. С другой стороны слишком длительное обучения полносвязной модели может последующее обучение результирующей модели.
 
@@ -440,29 +475,29 @@ $$S_i = Sa_i Wa + St_i Wt $$
             <tr>
                 <td>
                     <p align="center"><b>learning rate</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170093-3d28ac64-bcfe-4aeb-8243-271303872633.svg>
+                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170501-a44927a4-a898-4ef9-b5ec-3418a5bf8ebd.svg>
                 </td>
                 <td>
                     <p align="center"><b>train loss</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170094-b3c32734-027d-4831-a2c3-a4cd956424ca.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170473-72fe76b7-074c-43c0-8925-5152b7d3be7b.svg>
                 </td>
                 <td>
                     <p align="center"><b>train accuracy</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170092-d547e63b-448a-4b73-acd6-42827687b311.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170479-03e77aaf-d219-4211-8acd-72016b88fc36.svg>
                 </td>
             </tr>
             <tr>
                 <td>
                     <p align="center"><b>test public score</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170090-a199f4c4-2f33-4eb1-b9f5-9f89e6c0ad59.svg>
+                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170477-0dcea241-f0a0-4f54-a999-e9b049145032.svg>
                 </td>
                 <td>
                     <p align="center"><b>test private score</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170091-200846f3-b1dc-46b0-b549-fd27ba4ee368.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170478-dabd1a34-3185-4c14-b308-0266470748d1.svg>
                 </td>
                 <td>
                     <p align="center"><b>test score</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170088-2f8de71d-5ea8-49b0-b2ce-092b09e64455.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170479-03e77aaf-d219-4211-8acd-72016b88fc36.svg>
                 </td>
             </tr>
         </table>
