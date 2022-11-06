@@ -1,7 +1,5 @@
 # Skillbox. Дипломная работа по компьютерному зрению. Распознавание эмоций человека
 
-![image](https://user-images.githubusercontent.com/107345313/200141246-62fa7114-4936-4c0a-98b0-76b4293c07a3.png)
-
 В рамках данной дипломной работы был разработан ноутбук, с помощью которого можно создать готовую к использованию модель распознавания эмоций по изображению лица человека. Работа выполнялась в рамках соревнования [skillbox-computer-vision-project](https://www.kaggle.com/c/skillbox-computer-vision-project) на платформе [Kaggle](https://www.kaggle.com). Поэтому для обучения и тестирования работы модели использовались датасеты, прилагаемые к этому соревнованию. Причем тестовый датасет не имеет разметки. Поэтому проверка точности работы модели осуществляется на самой платформе с использованием [Kaggle API](https://github.com/Kaggle/kaggle-api). Для этого был создан специальный класс `Kaggle`.
 
 Однако, ноутбук может быть легко адаптирован для построения модели любой другой классификации изображений с помощью изменения настроек. Если цель создания модели не связана с распознаванием эмоций решается не в рамках соревнования Kaggle, то необходимо также добавить механизм получения точности предсказаний модели на тестовых и использовать его экземпляр в классе ранней остановки обучения при отстутствии увеличения точности предсказаний `EarlyStoppingAtMaxTestScore`.
@@ -438,6 +436,17 @@ $$S_i = Sa_i Wa + St_i Wt $$
 
 #### 3.5. Тонкая настройка модели (`model_fine_tuning`)
 Тонкая настройка модели
+
+<details><summary>Пример графиков обучения модели</summary>
+<p>
+![epoch_lr (1)](https://user-images.githubusercontent.com/107345313/200159519-fbd6f90a-afbd-439c-9db5-d495e29f47de.svg)
+![epoch_loss (1)](https://user-images.githubusercontent.com/107345313/200159520-0c972feb-fb5c-4cef-9f90-dd87613caba0.svg)
+![epoch_sparse_categorical_accuracy (1)](https://user-images.githubusercontent.com/107345313/200159523-bfeb5727-7781-48ff-8c90-aa0f3d34a049.svg)
+![epoch_test_private_score (1)](https://user-images.githubusercontent.com/107345313/200159528-3e0a2dcc-88df-467b-a4a3-c5d0b85e94a8.svg)
+![epoch_test_public_score (2)](https://user-images.githubusercontent.com/107345313/200159529-9a752861-d919-43eb-96c5-20c6dd6c220e.svg)
+![epoch_test_score (1)](https://user-images.githubusercontent.com/107345313/200159540-9b7e64b3-7dbb-4e7f-a547-d84475758583.svg)
+</p>
+</details>
 
 #### 3.6. Тестирование работы модели (`model_deploy_test`)
 
