@@ -522,7 +522,7 @@ $$S_i = Sa_i Wa + St_i Wt $$
 Тонкая настройка модели
 
 <details><summary>Пример графиков обучения модели</summary>
-    <p align="center" style="text-align:center">
+    <p align="center">
         <table>
             <tr>
                 <td>
@@ -555,7 +555,6 @@ $$S_i = Sa_i Wa + St_i Wt $$
         </table>
     </p>
 </details>
-
 #### 3.6. Тестирование работы модели (`model_deploy_test`)
 
 ## Примеры использования
@@ -565,56 +564,16 @@ $$S_i = Sa_i Wa + St_i Wt $$
 Хотя ноутбук и был разработан для решения конкретной задачи, он может быть достаточно легко адаптирован для решения любой задачи классификации изображений всего-лишь с помощью изменения настроек. Если цель создания модели не связана с распознаванием эмоций решается не в рамках соревнования Kaggle, то необходимо также добавить механизм получения точности предсказаний модели на тестовых и использовать его экземпляр в классе ранней остановки обучения при отстутствии увеличения точности предсказаний `EarlyStoppingAtMaxTestScore`.
 
 <details><summary>Примеры результатов предсказания модели</summary>
-    <p align="center" style="text-align:center">
-
-![image](https://user-images.githubusercontent.com/107345313/200178339-8a89e49a-21c6-41b7-916a-627e1b8092a6.png)
-
-    </p>
-</details>
-
-<details><summary>Пример графиков обучения модели</summary>
-    <p align="center" style="text-align:center">
+    <p align="center">
         <table>
             <tr>
                 <td>
-                    <p align="center"><b>anger</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177666-2ff6ed42-07d7-4755-83d7-1d63450e9f0b.jpg>
+                    <p align="center"><b>Модель 1-го типа</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200189119-a9c79869-4d1d-4d71-981e-978b84fe5e8f.png>
                 </td>
                 <td>
-                    <p align="center"><b>contempt</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177667-c88522a3-009d-4ff6-800d-5488a0ff210b.jpg>
-                </td>
-                <td>
-                    <p align="center"><b>disgust</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177669-e9403d11-912b-4117-af03-975062c82912.jpg>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p align="center"><b>fear</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177670-3a92fad5-a3e3-4d6a-9a8a-52898a1ea3e3.jpg>
-                </td>
-                <td>
-                    <p align="center"><b>happy</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177671-f2a46efb-cff8-4aca-8b56-cfd7de76a5d5.jpg>
-                </td>
-                <td>
-                    <p align="center"><b>neutral</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177672-b50d730c-b2dd-41f0-91d0-3670cde84665.jpg>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p align="center"><b>sad</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177673-1887cd34-70ad-4928-92a5-a0eca920dc9b.jpg>
-                </td>
-                <td>
-                    <p align="center"><b>surprise</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177674-42c80939-c634-49a0-91a3-e2c6c126ede5.jpg>
-                </td>
-                <td>
-                    <p align="center"><b>uncertain</b></p>
-                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200177676-612d51ae-50ca-4daa-b475-462d43bec462.jpg>
+                    <p align="center"><b>Модель 2-го типа</b></p>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200189122-c0bd4dd6-3440-44e3-a52f-fa981b08ce06.png>
                 </td>
             </tr>
         </table>        
