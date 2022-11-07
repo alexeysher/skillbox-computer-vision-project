@@ -155,20 +155,19 @@ RANDOM_BRIGHTNESS_FACTOR = .2 # Максимальное изменение яр
 - базовая модель (`augmention model`);
 - верхняя модель (`on top model`).
 
-<details><summary>Структурные схемы моделей</summary>
+<details><summary>Структурные схемы модели в режиме обучения</summary>
 <p>
 <tr>
 <td>
 <p align="center"><b>1-го типа</b></p>
-<img  width=100% src=https://user-images.githubusercontent.com/107345313/200171213-59d8951a-3505-4b52-8afd-5adc44ea52a2.svg>
-
+<img  width=100% src=https://user-images.githubusercontent.com/107345313/200283993-4ec70b6c-9da7-4355-891a-564332559041.svg>
 <p></p>
 </td>
 </tr>
 <tr>
 <td>    
 <p align="center"><b>2-го типа</b></p>
-<img  width=100% src=https://user-images.githubusercontent.com/107345313/200171208-067b48a3-4725-466d-b15b-8504443a207f.svg>
+<img  width=100% src=https://user-images.githubusercontent.com/107345313/200284152-5faabe63-43ab-4593-828b-2684ef35b70f.svg>
 <p></p>
 </td>
 </tr>
@@ -177,6 +176,24 @@ RANDOM_BRIGHTNESS_FACTOR = .2 # Максимальное изменение яр
 
 В состав модели для использования исключаются:
 
+<details><summary>Структурные схемы модели в режиме инференса</summary>
+<p>
+<tr>
+<td>
+<p align="center"><b>1-го типа</b></p>
+<img  width=100% src=https://user-images.githubusercontent.com/107345313/200284430-facc1ffe-abcf-42a0-9cc6-3de5fa05e125.svg>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>    
+<p align="center"><b>2-го типа</b></p>
+<img  width=100% src=https://user-images.githubusercontent.com/107345313/200284506-31348b7f-3623-40ac-83a5-4fc97582c2c6.svg>
+<p></p>
+</td>
+</tr>
+</p>
+</details>
 
 
 В метрики качества обучения модели используется точность её предсказаний на отдельном тестовом датасете. Такой датасет также как и тренировочный должен быть упакован в архив.
