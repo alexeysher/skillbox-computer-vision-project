@@ -181,14 +181,14 @@ RANDOM_BRIGHTNESS_FACTOR = .2 # Максимальное изменение яр
 <tr>
 <td>
 <p align="center"><b>1-го типа</b></p>
-<img  width=100% src=https://user-images.githubusercontent.com/107345313/200284430-facc1ffe-abcf-42a0-9cc6-3de5fa05e125.svg>
+<img  width=100% src=https://user-images.githubusercontent.com/107345313/200292114-4c6a4e79-a151-463c-a3d9-e22bfa526efa.svg>
 <p></p>
 </td>
 </tr>
 <tr>
 <td>    
 <p align="center"><b>2-го типа</b></p>
-<img  width=100% src=https://user-images.githubusercontent.com/107345313/200284506-31348b7f-3623-40ac-83a5-4fc97582c2c6.svg>
+<img  width=100% src=https://user-images.githubusercontent.com/107345313/200292181-72ec54e2-f367-4c06-854f-ce541722d108.svg>
 <p></p>
 </td>
 </tr>
