@@ -545,11 +545,10 @@ $$S_i = Sa_i Wa + St_i Wt $$
 </p>
 </details>
             
-            
 <details><summary>Поля csv-файла процесса выполнения этапа</summary>
 <p>
     
-- `model_on_top_config` - конфигурация блоков из слоев исключения и полносвязных слоёв в формате:  
+- `model_on_top_config` - конфигурация блоков слоев исключения и полносвязных слоёв верхней модели в формате:  
   (`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),  
 где&nbsp;`n` - количество блоков из списка, заданного параметром `MODEL_ON_TOP_DENSE_NUMS`;  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - доля обнуляемых при обучении входных нейронов полносвязного слоя в i-ом блоке из списка, заданного параметром `MODEL_ON_TOP_DROPOUT_RATES`;  
@@ -562,6 +561,18 @@ $$S_i = Sa_i Wa + St_i Wt $$
 </p>
 </details>
 
+<details><summary>Поля csv-файла процесса выполнения этапа</summary>
+<p>
+    
+- `model_on_top_config` - "лучшая" конфигурация блоков слоев исключения и полносвязных слоёв верхней модели в формате:  
+  (`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),  
+где&nbsp;`n` - количество блоков из списка, заданного параметром `MODEL_ON_TOP_DENSE_NUMS`;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - доля обнуляемых при обучении входных нейронов полносвязного слоя в i-ом блоке из списка, заданного параметром `MODEL_ON_TOP_DROPOUT_RATES`;  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - количество выходных нейронов полносвязного слоя в i-ом блоке из списка, заданного параметром `MODEL_ON_TOP_DENSE_UNITS`;  
+- `best_test_score` - лучшее значение точности предсказаний на тестовом датасете верхней модели с "лучшей" конфигурацией.
+
+</p>
+</details>
 
 <details><summary>Пример графиков обучения модели</summary>
     <p align="center" style="text-align:center">
@@ -600,6 +611,69 @@ $$S_i = Sa_i Wa + St_i Wt $$
 
 #### 3.4. Обучение полносвязной модели (`model_on_top_training`)
 На этапе производится обучение верхней модели. Целью данного этапа в первую очередь является снижение вероятности возникновения градиента. Поэтому при обучении модели может возникнуть большой градиент, который может "сломать" базовую модель. С другой стороны слишком длительное обучение только верхей модели может осложнить последующее обучение результирующей модели.
+
+<details><summary>Пример настроек этапа</summary>
+<p>
+    
+```python
+'params': {
+    'path': 'model_on_top_training', # Путь к папке с логами и весами полносвязной модели
+    'flip': RANDOM_FLIP, # Случайное отрезкаливание изображения
+    'rotation_factor': RANDOM_ROTATION_FACTOR, # Фактор случайного поворота (против или по часой стрелке) изображения при аугментации, доли от 360°
+    'zoom_factor': RANDOM_ZOOM, # Фактор случайного приближения или удаления изображения при аугментации
+    'contrast_factor': RANDOM_CONTRACT_FACTOR, # Фактор случаного изменения контраста изображения
+    'brightness_factor': RANDOM_BRIGHTNESS_FACTOR, # Фактор случаного изменения яркости изображения
+    'batch_size': 32, # Размер батча
+    'buffer_size': 100, # Размер буфера
+    'optimizer_name': OPTIMIZER, # Оптимизатор,
+    'initial_learning_rate': MODEL_ON_TOP_INITIAL_LEARNING_RATE, # Начальная скорость обучения
+    'learning_rate_decay_rate': MODEL_ON_TOP_LEARNING_RATE_DECAY_RATE, # Коэффициент снижения скорости обучения
+    'epochs': 10, # Количество эпох при измерении времени инференса
+    'epochs_per_run': 10, # Количество эпох обучения за один запуск
+    'patience': 2, # Макс. количество эпох без улучшения точности
+    'process_csv': 'model_on_top_training.csv', # Путь с результатами обучения полносвязной
+    'result_csv': 'trained_model_on_top.csv', # Путь к файлу с оценкой полносвязной модели
+}
+```
+    
+</p>
+</details>
+
+<details><summary>Поля csv-файла процесса выполнения этапа</summary>
+<p>
+    
+    - `epoch` - номер эпохи обучения;
+    - `loss` - значение функции потерь в конце эпохи обучения;
+    - `sparse_categorical_accuracy` - точность предсказаний на тренировочном датасете изображений лиц в конце эпохи обучения;
+    - `lr` - скорость обучения в течение следующей эпохи обучения;
+    - `test_public_score` - точность предсказания модели на публичной части тестового датасета изображений лиц;
+    - `test_private_score` - точность предсказания модели на приватной части тестового датасета изображений лиц;
+    - `test_score` - средняя точность предсказания модели на тестовом датасета изображений лиц.
+
+</p>
+</details>
+
+<details><summary>Пример настроек этапа</summary>
+<p>
+    
+```python
+'params': {
+    'path': 'model_fine_tuning', # Путь к папке с логами и весами полносвязной модели
+    'batch_size': 32, # Размер батча
+    'buffer_size': 100, # Размер буфера
+    'optimizer_name': OPTIMIZER, # Оптимизатор
+    'initial_learning_rate': MODEL_INITIAL_LEARNING_RATE, # Начальная скорость обучения
+    'learning_rate_decay_rate': MODEL_LEARNING_RATE_DECAY_RATE, # Коэффициент снижения скорости обучения
+    'epochs': 50, # Количество эпох обучения
+    'epochs_per_run': 10, # Количество эпох обучения за один запуск
+    'patience': 10, # Макс. количество эпох без улучшения точности
+    'process_csv': 'model_fine_tuning.csv', # Путь к файлу с данными процесса тонкой настройки модели
+    'result_csv': 'model.csv', # Путь к файлу с оценкой результирующей модели
+}
+```
+    
+</p>
+</details>
 
 <details><summary>Пример графиков обучения модели</summary>
     <p align="center" style="text-align:center">
