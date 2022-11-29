@@ -1023,7 +1023,30 @@ MODEL_BUILDING_PIPELINE = {
 - `image` - путь к файлу изображения лица;
 - `probability` - вероятность, с которой была распознана эмоция.
 
-    </p>
+</p>
+</details>
+
+<details><summary>Примеры внешнего вида окна</summary>
+<p align="center">
+<table>
+<tr>
+<td>
+<p align="center"><b>В процессе тестирования</b></p>
+<img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358136-1178be9e-b96d-4722-9058-06592098d9cf.png>
+</td>
+<td>
+<p align="center"><b>По завершении тестирования</b></p>
+<img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358122-9b2fc697-a512-4bf5-835a-de7cd7ae564c.png>
+</td>
+</tr>
+</table>        
+</p>
+</details>
+
+<details><summary>Примеры "лучших" изображений лица</summary>
+<p align="center">
+<img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204360816-84a96f46-cdb8-45fc-9560-5c1b01a01be5.png>
+</p>
 </details>
 
 ##### Тестирование модели [2-го типа](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
@@ -1060,18 +1083,16 @@ MODEL_BUILDING_PIPELINE = {
 </p>
 </details>
 
-<details><summary>Примеры окон визуализации</summary>
+<details><summary>Примеры внешнего вида окна</summary>
 <p align="center">
 <table>
 <tr>
 <td>
-<p align="center"><b>Модель 1-го типа</b></p>
-<img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358136-1178be9e-b96d-4722-9058-06592098d9cf.png>
-<img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358122-9b2fc697-a512-4bf5-835a-de7cd7ae564c.png>
+<p align="center"><b>В процессе тестирования</b></p>
+<img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358144-a0d4f282-84d9-4879-9b47-1fa3f4709131.png>
 </td>
 <td>
-<p align="center"><b>Модель 2-го типа</b></p>
-<img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358144-a0d4f282-84d9-4879-9b47-1fa3f4709131.png>
+<p align="center"><b>По завершении тестирования</b></p>
 <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358140-37ff0cf8-7f70-4a75-966b-1aa2aaf9300c.png>
 </td>
 </tr>
@@ -1079,21 +1100,9 @@ MODEL_BUILDING_PIPELINE = {
 </p>
 </details>
 
-
-<details><summary>Примеры результатов предсказания модели</summary>
+<details><summary>Примеры "лучших" изображений лица</summary>
 <p align="center">
-<table>
-<tr>
-<td>
-<p align="center"><b>Модель 1-го типа</b></p>
-<img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204360816-84a96f46-cdb8-45fc-9560-5c1b01a01be5.png>
-</td>
-<td>
-<p align="center"><b>Модель 2-го типа</b></p>
 <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204360810-2e86e4c3-e5bd-4fbe-8dbf-5d9ecf614c8c.png>
-</td>
-</tr>
-</table>        
 </p>
 </details>
 
@@ -1114,4 +1123,4 @@ MODEL_BUILDING_PIPELINE = {
 
 ## Направления дальнейшего развития
 
-Хотя ноутбук и был разработан для решения конкретной задачи, он может быть достаточно легко адаптирован для решения любой задачи классификации изображений всего-лишь с помощью изменения настроек. Если цель создания модели не связана с распознаванием эмоций и решается не в рамках соревнования [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data), то необходимо также добавить механизм получения точности предсказаний модели на тестовых данных и использовать его экземпляр в классе ранней остановки обучения при отстутствии увеличения точности предсказаний `EarlyStoppingAtMaxTestScore`.
+Хотя ноутбук и был разработан для решения конкретной задачи, он может быть достаточно легко адаптирован для решения любой другой задачи классификации изображений. Для этого необходимо заменить механизм получения точности предсказаний модели на тестовых данных (класс `Kaggle`) и использовать его экземпляр в классе ранней остановки обучения при отстутствии увеличения точности предсказаний `EarlyStoppingAtMaxTestScore`.
