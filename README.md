@@ -435,7 +435,9 @@ $$S_i = Sa_i Wa + St_i Wt $$
 </details>
 
 ### 2. Предобработка изображений (`IMAGE_PREPROCESSING_PIPELINE`).
-Данный пайплайн предназначен для подготовки тренировочных и тестовых датасетов. В процессе выполнения пайплайна производится обрезка изображений до области лица, чтобы убрать лишние детали, которые могут путать модель. Поиск лиц на изображениях осуществляется с помощью предобученного детектора лиц [MTCNN](https://github.com/ipazc/mtcnn), реализованной Iván de Paz Centeno <ipazc@unileon.es>. Детектор построен на базе многозадачной сверточной нейронной сети (англ. *Multi-task Cascaded Convolutional Network*), описанной в статье Kaipeng Zhang, Zhanpeng Zhang, Zhifeng Li и Yu Qiao "[Joint face detection and alignment using multitask cascaded convolutional networks](https://arxiv.org/abs/1604.02878)".
+Данный пайплайн предназначен для подготовки тренировочных и тестовых датасетов. В процессе выполнения пайплайна производится обрезка изображений до области лица, чтобы убрать лишние детали, которые могут путать модель. 
+
+Поиск лиц на изображениях осуществляется с помощью предобученного детектора лиц [MTCNN](https://github.com/ipazc/mtcnn), реализованной Iván de Paz Centeno <ipazc@unileon.es>. Детектор построен на базе многозадачной сверточной нейронной сети (англ. *Multi-task Cascaded Convolutional Network*), описанной в статье Kaipeng Zhang, Zhanpeng Zhang, Zhifeng Li и Yu Qiao "[Joint face detection and alignment using multitask cascaded convolutional networks](https://arxiv.org/abs/1604.02878)".
 
 <details><summary>Пример настройки паплайна</summary>
 <p>
