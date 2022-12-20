@@ -78,7 +78,7 @@ def create_emotion_recognizer() -> FaceEmotionRecognitionNet:
     return FaceEmotionRecognitionNet(MODEL_PATH, EMOTIONS)
 
 
-def upload_video() -> VideoData | None:
+def upload_video() -> Union[VideoData, None]:
     """Загрузка видео. Загруженный файл сохраняется в папку 'temp' и отображается в проигрывателе.
     Возвращает путь к загруженному файлу в виде объекта Path."""
     with st.expander('Загрузка видео...'):
