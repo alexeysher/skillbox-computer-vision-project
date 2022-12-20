@@ -2,6 +2,7 @@ from collections import namedtuple
 from PIL import Image, ImageOps
 import numpy as np
 from keras import models
+from typing import Union
 
 EMOTIONS = {
     'anger': (-0.41, 0.79),  # гнев, злость
@@ -32,7 +33,7 @@ class FaceEmotionRecognitionNet:
         self.__model = models.load_model(filepath=model_path, compile=False)
         self.__emotions = emotions
 
-    def predict(self, face_image: np.array) -> EmotionPrediction | ValenceArousalPrediction:
+    def predict(self, face_image: np.array) -> Union[EmotionPrediction, ValenceArousalPrediction]:
         """Предсказание эмоции человека по изображению его лица.
 
         Аргументы:
