@@ -1,3 +1,5 @@
+from typing import Union
+
 from pathlib import Path
 from datetime import timedelta, datetime, date
 from collections import namedtuple
@@ -108,7 +110,7 @@ def create_video_capture(file_path: str) -> cv2.VideoCapture:
     return capture
 
 
-def retrieve_video_info(capture: cv2.VideoCapture) -> VideoInfo | None:
+def retrieve_video_info(capture: cv2.VideoCapture) -> Union[VideoInfo, None]:
     """Возвращает информацию о видео открытом в 'захватчике'."""
     frame_width = int(capture.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT))
