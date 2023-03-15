@@ -250,7 +250,7 @@ def results():
              '204360810-2e86e4c3-e5bd-4fbe-8dbf-5d9ecf614c8c.png')
 
 
-st.set_page_config(page_title='Распознавание эмоций человека', page_icon='person', layout='wide')
+st.set_page_config(page_title='Распознавание эмоций человека', page_icon=':person:', layout='wide')
 
 with st.sidebar:
     choice = option_menu(
