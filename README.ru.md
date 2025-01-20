@@ -1,5 +1,5 @@
 [![en](https://img.shields.io/badge/lang-en-green.svg)](README.md)
-[![ru](https://img.shields.io/badge/lang-ru-red.svg)](README.ru.
+[![ru](https://img.shields.io/badge/lang-ru-red.svg)](README.ru.md)
 # Skillbox. Дипломная работа по компьютерному зрению. Распознавание эмоций человека
 
 В рамках данной дипломной работы был разработан ноутбук, с помощью которого можно создать готовую к использованию модель распознавания эмоций человека по выражению его лица. Работа выполнялась в рамках соревнования [skillbox-computer-vision-project](https://www.kaggle.com/c/skillbox-computer-vision-project) на платформе [Kaggle](https://www.kaggle.com).
