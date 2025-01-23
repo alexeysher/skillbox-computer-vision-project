@@ -307,45 +307,45 @@ COLAB_GD_PROJ_PATH = f'/content/drive/MyDrive/{PROJECT_NAME}' # Path to the proj
 
 In addition, to improve the convenience of using the notebook, each time it is started, the packages necessary for its operation on a specific platform are automatically installed.
 
-### 1. Сбор информации о базовых моделях в [Keras Applications](https://keras.io/api/applications/) (`KERAS_BASE_MODELS_PROCESSING_PIPELINE`)
+### 1. Collecting information about base models in [Keras Applications](https://keras.io/api/applications/) (`KERAS_BASE_MODELS_PROCESSING_PIPELINE`)
 
-<details><summary>Пример настройки паплайна</summary>
+<details><summary>Pipeline setup example</summary>
 <p>
-    
+
 ```python
 KERAS_BASE_MODELS_PROCESSING_PIPELINE = {
     'name': 'keras_base_models_processing',
-    'description': 'Пайплайн сбора информации о базовых моделях в Keras Applications',
+    'description': 'Pipeline for collecting information about base models in Keras Applications',
     'report_csv': 'pipeline_base_models_processing.csv',
     'stages': [
         {
             'name': 'sizes_retrieving',
-            'description': 'Получение информации о размерах входных изображений и векторов признаков',
-            'platform': 'colab', # Выполняется в Google Colab
+            'description': 'Getting information about the sizes of input images and feature vectors',
+            'platform': 'colab', # Runs in Google Colab
             'params': {
-               'result_csv': 'base_model_sizes.csv', # Путь к файлу с отобранными моделями
+                'result_csv': 'base_model_sizes.csv', # Path to the file with the selected models
             }
         },
         {
             'name': 'inference_time_measuring',
-            'description': 'Измерение времени инференса моделей',
-            'platform': 'colab', # Выполняется в Google Colab
+            'description': 'Measuring model inference time',
+            'platform': 'colab', # Runs in Google Colab
             'params': {
-                'batch_size': 1, # Размер батча
-                'batches': 1, # Количество батчей в датасете
-                'repetitions': 100, # Количество повторов
-                'result_csv': 'model_inference_times.csv', # Путь к файлу с отобранными моделями
+                'batch_size': 1, # Batch size
+                'batches': 1, # Number of batches in the dataset
+                'repetitions': 100, # Number of repetitions
+                'result_csv': 'model_inference_times.csv', # Path to the file with the selected models
             }
         },
         {
-            'name': 'base_model_selection',
-            'description': 'Выбор базовой модели',
-            'platform': 'colab', # Выполняется в Google Colab
-            'params': {
-                'inference_time_weight': INFERENCE_TIME_WEIGHT, # Вес времени инференса при выборе базовой модели
-                'top1_accuracy_weight': 1 - INFERENCE_TIME_WEIGHT, # Вес точности  при выборе базовой модели
-                'process_csv': 'base_model_selection.csv', # Путь к файлу с данными процесса выбора базовой модели
-                'result_csv': 'base_model.csv', # Путь к файлу с описанием выбранной базовой модели
+        'name': 'base_model_selection',
+        'description': 'Base model selection',
+        'platform': 'colab', # Runs in Google Colab
+        'params': {
+                'inference_time_weight': INFERENCE_TIME_WEIGHT, # Inference time weight when selecting a base model
+                'top1_accuracy_weight': 1 - INFERENCE_TIME_WEIGHT, # Accuracy weight when selecting a base model
+                'process_csv': 'base_model_selection.csv', # Path to the file with the base model selection process data
+                'result_csv': 'base_model.csv', # Path to the file with the description of the selected base model
             }
         },
     ]
