@@ -114,6 +114,7 @@ The base model is trained to determine which object from the [ImageNet](https://
 ```python
 BASE_MODEL_POOLINGS = 'avg' # Type of pooling at the output of the base models ('avg' - average, 'max' - max)
 ```
+
 </p>
 </details>
 
@@ -129,7 +130,8 @@ All of the listed layers form the conventionally named "on top model".
 ```python
 MODEL_ON_TOP_DENSE_NUMS = [1, 2] # Options for the number of additional fully connected layers
 MODEL_ON_TOP_DENSE_UNITS = [1024, 2048] # Options for the number of output neurons in the additional fully connected layer
-MODEL_ON_TOP_DROPOUT_RATES = [.0, .2] # Options for the proportion of data to drop before feeding into the fully connected layer during training```
+MODEL_ON_TOP_DROPOUT_RATES = [.0, .2] # Options for the proportion of data to drop before feeding into the fully connected layer during training
+```
     
 </p>
 </details>
