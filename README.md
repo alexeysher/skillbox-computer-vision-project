@@ -16,7 +16,7 @@ The type of the created model is determined by the way the emotions that the mod
 <table>
 <tr>
 <td>
-<p align="center"><b>Type 1 model</b></p>
+<p align="center"><b>1st type model</b></p>
 
 ```python
 EMOTIONS = (
@@ -34,7 +34,7 @@ EMOTIONS = (
 
 </td>
 <td>
-<p align="center"><b>Type 2 model</b></p>
+<p align="center"><b>2nd type model</b></p>
 
 ```python
 EMOTIONS = {
@@ -134,9 +134,9 @@ MODEL_ON_TOP_DROPOUT_RATES = [.0, .2] # Options for the proportion of data to dr
 </p>
 </details>
 
-When constructing the model [1st type](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D 0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6 %D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0% BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0% BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0 %BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1 %86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-% D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82) another fully connected layer with the function is added to the last block activation of the [SoftMax](https://en.wikipedia.org/wiki/Softmax_function) type and the number of output neurons corresponding to the number of recognized emotions. In this case, at the output of the model, during inference, a vector of probabilities is formed for what emotion the person's face expresses at the input image.
+When constructing the [1st type] (#1-a-model-that-predicts-the-probabilities-of-emotions-that-a-person-is-experiencing-based-on-their-facial-expression) model another fully connected layer with the function is added to the last block activation of the [SoftMax](https://en.wikipedia.org/wiki/Softmax_function) model and the number of output neurons corresponding to the number of recognized emotions. In this case, at the output of the model, during inference, a vector of probabilities is formed for what emotion the person's face expresses at the input image.
 
-When constructing the model [2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1% 80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD %D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0% D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0% BB%D0%B5%D0%BD%D1%82%D0%BD%D 0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1 %82%D0%B5%D0%BD%D1%81%D 0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1% 8D%D0%BC%D0%BE%D1%86%D0 %B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8% D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88% D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1) another fully connected layer is also added to the last block. But this layer has only 2 output neurons, and the [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) function is used for activation, with a value limit of up to 2. Thus, the output neurons of this layer can take values ​​in the range from 0 to 2. But since the predicted values ​​of valence and intensity must be in the range from -1 to 1, then at the end of the model another layer is placed, which subtracts 1 from the values ​​of the output neurons of the previous fully connected layer.
+When constructing the model [2nd type](#2-a-model-that-can-recognize-the-valence-and-intensity-levels-of-an-emotion-that-a-person-is-experiencing-on-a-scale-from--1-to-1-based-on-their-facial-expression) model another fully connected layer is also added to the last block. But this layer has only 2 output neurons, and the [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) function is used for activation, with a value limit of up to 2. Thus, the output neurons of this layer can take values ​​in the range from 0 to 2. But since the predicted values ​​of valence and intensity must be in the range from -1 to 1, then at the end of the model another layer is placed, which subtracts 1 from the values ​​of the output neurons of the previous fully connected layer.
 
 Additionally in In order to improve the quality of model training by increasing the diversity of input images, an augmentation model is added to the base model. This model randomly transforms the input image during training before feeding it to the base model. The augmentation model randomly rotates the image slightly , changes its contrast and brightness, and also mirrors it. The user can define the ranges of these transformations in the project settings.
 
@@ -163,14 +163,14 @@ Thus, the resulting model during training consists of three sequentially connect
 <p>
 <tr>
 <td>
-<p align="center"><b>1st type 1</b></p>
+<p align="center"><b>1st type model</b></p>
 <img width=100% src=https://user-images.githubusercontent.com/107345313/200283993-4ec70b6c-9da7-4355-891a-564332559041.svg>
 <p></p>
 </td>
 </tr>
 <tr>
 <td>
-<p align="center"><b>s 2</b></p>
+<p align="center"><b>2nd type model</b></p>
 <img width=100% src=https://user-images.githubusercontent.com/107345313/200284152-5faabe63-43ab-4593-828b-2684ef35b70f.svg>
 <p></p>
 </td>
@@ -184,14 +184,14 @@ As noted above, the augmentation model and the exclusion layers in the upper mod
 <p>
 <tr>
 <td>
-<p align="center"><b>1st type</b></p>
+<p align="center"><b>1st type model</b></p>
 <img  width=100% src=https://user-images.githubusercontent.com/107345313/200292114-4c6a4e79-a151-463c-a3d9-e22bfa526efa.svg>
 <p></p>
 </td>
 </tr>
 <tr>
 <td>    
-<p align="center"><b>2nd type</b></p>
+<p align="center"><b>2nd type model</b></p>
 <img  width=100% src=https://user-images.githubusercontent.com/107345313/200292181-72ec54e2-f367-4c06-854f-ce541722d108.svg>
 <p></p>
 </td>
@@ -203,11 +203,11 @@ As noted above, the augmentation model and the exclusion layers in the upper mod
 
 A special class `FaceEmotionRecognitionNet` is provided for using a trained model as part of an emotion recognition application. This class prepares the input face image before feeding it to the model, obtains model predictions, and extracts meaningful information from the model predictions.
 
-When creating a class, you need to pass the path to the trained model file (the `file_path` parameter) and a description of the emotions recognized by the model (`emotions`). The type of emotion description shows the class what type of model is used. If emotions are described using a simple list or a tuple of their names, then this is a [1st type](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D 0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6% D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%B B%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%B A%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0% BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1% 86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82). ​​If the description of emotions is presented by a dictionary in which each emotion is matched with a pair of values ​​characterizing the typical levels of valence and intensity of this emotion, then this is a model [of the 2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0 %BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0 %B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B 8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
+When creating a class, you need to pass the path to the trained model file (the `file_path` parameter) and a description of the emotions recognized by the model (`emotions`). The type of emotion description shows the class what type of model is used. If emotions are described using a simple list or a tuple of their names, then this is a model of the [1st type](#1-a-model-that-predicts-the-probabilities-of-emotions-that-a-person-is-experiencing-based-on-their-facial-expression). ​​If the description of emotions is presented by a dictionary in which each emotion is matched with a pair of values ​​characterizing the typical levels of valence and intensity of this emotion, then this is a model of the [2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0 %BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0 %B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B 8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
 
 This class has only one method - `predict`, which, based on an array representing a face image (argument `face_image`), depending on the model type, returns:
-- [1st type](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D 0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6 %D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0% BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0% BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0 %BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1 %86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82) - the name of the emotion (`emotion`) that the face in the input image most likely expresses, and the probability (`probability`) with which the model recognized this emotion;
-- [2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D 0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D 0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0 %B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8 B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1) - the name of the emotion (`emotion`) whose typical valence and intensity values ​​are closest to the values ​​predicted by the model, the distance between them (`error`) and the valence and intensity (`arousal`) values ​​predicted by the model of the emotion expressed by the face in the input image.
+- [1st type](#1-a-model-that-predicts-the-probabilities-of-emotions-that-a-person-is-experiencing-based-on-their-facial-expression) - the name of the emotion (`emotion`) that the face in the input image most likely expresses, and the probability (`probability`) with which the model recognized this emotion;
+- [2nd type](#2-a-model-that-can-recognize-the-valence-and-intensity-levels-of-an-emotion-that-a-person-is-experiencing-on-a-scale-from--1-to-1-based-on-their-facial-expression)- the name of the emotion (`emotion`) whose typical valence and intensity values ​​are closest to the values ​​predicted by the model, the distance between them (`error`) and the valence and intensity (`arousal`) values ​​predicted by the model of the emotion expressed by the face in the input image.
 - 
 ## Data for creating the model
 
@@ -1033,7 +1033,7 @@ where&nbsp;`n` is the number of blocks from the list specified by the `MODEL_ON_
     </p>
 </details>
 
-#### 3.6. Тестирование работы модели (`model_deploy_test`)
+#### 3.6. Model testing (`model_deploy_test`)
 
 Testing is performed on an image from the built-in camera of the local computer. Therefore, this stage must be performed on the local computer (the `platform` parameter must be equal to `local`).
 
@@ -1041,7 +1041,7 @@ The presence and coordinates of a face in the image are determined using the [MT
 
 The image from the camera is displayed in a separate window, which is automatically opened when the stage is performed and closed upon its completion. The face area in the image is highlighted using a rectangle. The remaining visual information depends on the model type.
 
-##### Testing the model [1st type](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D 0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6% D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%B B%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%B A%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0% BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1% 86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82).
+##### Testing the [1st type](#1-a-model-that-predicts-the-probabilities-of-emotions-that-a-person-is-experiencing-based-on-their-facial-expression) model.
 If the probability of recognizing an emotion exceeds the specified reliability threshold, defined by the `min_probability` parameter, the face area rectangle is colored green. Otherwise, this rectangle is colored red.
 
 The name of the recognized emotion and its probability in brackets are displayed above the face area rectangle on a background of the same color.
@@ -1097,13 +1097,13 @@ After this, the facial images that most reliably express the recognizable emotio
 </p>
 </details>
 
-##### Model testing [2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1% 80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD %D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0% D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0% BB%D0%B5%D0%BD%D1%82%D0%BD%D0 %BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1% 82%D0%B5%D0%BD%D1%81%D0 %B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D %D0%BC%D0%BE%D1%86%D0% B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1 %81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0 %BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
+##### Testing the [2nd type](#2-a-model-that-can-recognize-the-valence-and-intensity-levels-of-an-emotion-that-a-person-is-experiencing-on-a-scale-from--1-to-1-based-on-their-facial-expression) model.
 Above the rectangles of the face area in the first line the valence values ​​are displayed ( `V`) and intensity (`A`) of emotion. And in the second line the name of the emotion is indicated, they are closest to the typical values ​​of valence and intensity. The distance is indicated in brackets
 If the distance between the typical and model-defined values ​​of valence and intensity of emotion does not exceed the specified reliability threshold, defined by the parameter `max_error`, then the face area rectangle and the text background are colored green. Otherwise, the rectangle and text are colored red color.
 
 On the left side of the window, a list of emotions that were reliably recognized is displayed in green (the distance of the closest obtained valence and intensity values ​​to the typical valence and intensity values ​​does not exceed the reliability threshold). Next to the name of the emotions, the value of the "best" valence values ​​is displayed in brackets and intensity. On the right side, on the contrary, a list of emotions is displayed that have not yet been reliably recognized. Next to the names of these emotions, the value of the "best" valence and intensity values ​​is also displayed in brackets.
 
-Just as in the case of testing the type 1 model, testing can be completed by the user only after all emotions have been reliably recognized. After this, the "best" facial images are also saved in the project folder on the execution platform and in a single cloud storage.
+Just as in the case of testing the 1st type model, testing can be completed by the user only after all emotions have been reliably recognized. After this, the "best" facial images are also saved in the project folder on the execution platform and in a single cloud storage.
 
 <details><summary>Stage execution report csv file fields</summary>
 <p>
