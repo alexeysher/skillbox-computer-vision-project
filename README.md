@@ -356,53 +356,6 @@ KERAS_BASE_MODELS_PROCESSING_PIPELINE = {
     
 </p>
 </details>
-### 1. Collecting information about base models in [Keras Applications](https://keras.io/api/applications/) (`KERAS_BASE_MODELS_PROCESSING_PIPELINE`)
-
-<details><summary>Example of setting up a pipeline</summary>
-<p>
-
-``python
-KERAS_BASE_MODELS_PROCESSING_PIPELINE = {
-    'name': 'keras_base_models_processing',
-    'description': 'Pipeline for collecting information about base models in Keras Applications',
-    'report_csv': 'pipeline_base_models_processing.csv',
-    'stages': [
-        {
-            'name': 'sizes_retrieving',
-            'description': 'Getting information about the sizes of input images and vectors features',
-            'platform': 'colab', # Runs in Google Colab
-            'params': {
-                'result_csv': 'base_model_sizes.csv', # Path to the file with the selected models
-            }
-        },
-        {
-            'name': 'inference_time_measuring',
-            'description': 'Measuring the inference time of models',
-            'platform': 'colab', # Runs in Google Colab
-            'params': {
-                'batch_size': 1, # Batch size
-                'batches': 1, # Number of batches in the dataset
-                'repetitions': 100, # Number of repetitions
-                'result_csv': 'model_inference_times.csv', # Path to the file with the selected models
-            }
-        },
-        {
-            'name': 'base_model_selection',
-            'description': 'Base model selection',
-            'platform': 'colab', # Runs in Google Colab
-            'params': {
-                'inference_time_weight': INFERENCE_TIME_WEIGHT, # Inference time weight for base model selection
-                'top1_accuracy_weight': 1 - INFERENCE_TIME_WEIGHT, # Accuracy weight for base model selection
-                'process_csv': 'base_model_selection.csv', # Path to file with base model selection process data
-                'result_csv': 'base_model.csv', # Path to file with description of selected base model
-            }
-        },
-    ]
-}
-```
-
-</p>
-</details>
 
 #### 1.1. Retrieving information about the sizes of input images and feature vectors (`sizes_retrieving`)
 The first goal of this stage is to obtain information about the optimal sizes of input images for each base model. Images fed to the model during training and use for obtaining predictions will be scaled to this size.
@@ -591,7 +544,7 @@ After completing the stage, it is necessary to visually check the quality of the
 #### 2.2. Extracting face images from the test dataset (`test_face_extraction`)
 The purpose of this stage is only to extract faces from the test dataset (cutting off unnecessary information). It is assumed that the test data is a priori correct, i.e. all images contain a complete image of at least one face. Therefore, if a face is not detected on at least one source image, the stage is considered not completed and it is necessary to adjust the detector settings and run it again.
 
-Similar to [previous](#11-%D0%B8%D0%B7%D0%B2%D0%BB%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B 8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BB%D0%B8%D1%86-%D 0%B8%D0%B7-%D1%82%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0-train_face_extraction) stage during the execution of the stage, an archive of the test dataset of face images and csv files of the report and results of the stage are formed.
+Similar to [previous](#21-extracting-face-images-from-the-training-dataset-train_face_extraction) stage during the execution of the stage, an archive of the test dataset of face images and csv files of the report and results of the stage are formed.
 
 <details><summary>Fields of the CSV file of the stage execution report</summary>
 <p>
@@ -1043,7 +996,7 @@ The presence and coordinates of a face in the image are determined using the [MT
 
 The image from the camera is displayed in a separate window, which is automatically opened when the stage is performed and closed upon its completion. The face area in the image is highlighted using a rectangle. The remaining visual information depends on the model type.
 
-##### Testing the [1st type](#1-a-model-that-predicts-the-probabilities-of-emotions-that-a-person-is-experiencing-based-on-their-facial-expression) model.
+##### 3.6.1. Testing the [1st type](#1-a-model-that-predicts-the-probabilities-of-emotions-that-a-person-is-experiencing-based-on-their-facial-expression) model.
 If the probability of recognizing an emotion exceeds the specified reliability threshold, defined by the `min_probability` parameter, the face area rectangle is colored green. Otherwise, this rectangle is colored red.
 
 The name of the recognized emotion and its probability in brackets are displayed above the face area rectangle on a background of the same color.
@@ -1099,7 +1052,7 @@ After this, the facial images that most reliably express the recognizable emotio
 </p>
 </details>
 
-##### Testing the [2nd type](#2-a-model-that-can-recognize-the-valence-and-intensity-levels-of-an-emotion-that-a-person-is-experiencing-on-a-scale-from--1-to-1-based-on-their-facial-expression) model.
+##### 3.6.2. Testing the [2nd type](#2-a-model-that-can-recognize-the-valence-and-intensity-levels-of-an-emotion-that-a-person-is-experiencing-on-a-scale-from--1-to-1-based-on-their-facial-expression) model.
 Above the rectangles of the face area in the first line the valence values ​​are displayed ( `V`) and intensity (`A`) of emotion. And in the second line the name of the emotion is indicated, they are closest to the typical values ​​of valence and intensity. The distance is indicated in brackets
 If the distance between the typical and model-defined values ​​of valence and intensity of emotion does not exceed the specified reliability threshold, defined by the parameter `max_error`, then the face area rectangle and the text background are colored green. Otherwise, the rectangle and text are colored red color.
 
