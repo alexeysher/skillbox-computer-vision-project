@@ -739,14 +739,14 @@ MODEL_BUILDING_PIPELINE = {
 </details>
 
 #### 3.1. Extracting features from the training dataset (`train_feature_extraction`)
-The goal of this step is to obtain a dataset from the feature vectors of the training dataset's facial images. This dataset is used in the [best fully connected model selection](#33-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%B9-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D0%B9-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-model_on_top_selection) stage. Features are extracted by "passing" face images through the base model.
+The goal of this step is to obtain a dataset from the feature vectors of the training dataset's facial images. This dataset is used in [the best on top model selectionl selection](#33-selecting-the-best-top-model-model_on_top_selection) stage. Features are extracted by "passing" face images through the base model.
 Images are fed to the model in batches. The batch size is specified by the `batch_size` parameter. To increase the speed of processing, images are pre-loaded into a buffer (English *buffer*), the size of which is specified using the `buffer_size` parameter.
 The resulting feature vectors are packed into a numpy array, which is saved to a file with the name specified in the `path` parameter and the `npz` extension. The zip archive of this file is copied to the project folder in a single cloud storage.
 
 #### 3.2. Extracting features from the test dataset (`test_feature_extraction`)
 The goal of this step is to obtain a dataset from the feature vectors of the test dataset faces. This dataset is also used in the step of selecting the best fully connected model. This step is performed similarly to the previous one and has the same set of tuning parameters.
 
-#### 3.3. Selecting the best top model (`model_on_top_selection`)
+#### 3.3. Selecting the best on top model (`model_on_top_selection`)
 The goal of this stage is to determine the top model configuration that has the best potential for use in the resulting model. To identify such a configuration, top models are trained with all possible combinations of options for the number of dropout layer blocks and fully connected layers, options for the number of output neurons in fully connected layers, as well as options for the values ​​of the proportion of zeroed neurons in dropout layers. Top models are trained on a training dataset of face image features.
 
 Models are trained until an increase in the accuracy of their predictions is observed on the test dataset of face image features. Accuracy is checked on the [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data) platform. During the training process, its speed decreases every epoch along an exponential trajectory determined by the initial value specified by the `initial_learning_rate` parameter and the decay factor specified by the `initial_learning_rate` parameter.
