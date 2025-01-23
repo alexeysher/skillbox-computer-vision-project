@@ -1,51 +1,52 @@
 [![en](https://img.shields.io/badge/lang-en-green.svg)](README.md)
 [![ru](https://img.shields.io/badge/lang-ru-red.svg)](README.ru.md)
-# Skillbox. Дипломная работа по компьютерному зрению. Распознавание эмоций человека
+# Skillbox. Thesis on computer vision. Human Emotion Recognition
 
-В рамках данной дипломной работы был разработан ноутбук, с помощью которого можно создать готовую к использованию модель распознавания эмоций человека по выражению его лица. Работа выполнялась в рамках соревнования [skillbox-computer-vision-project](https://www.kaggle.com/c/skillbox-computer-vision-project) на платформе [Kaggle](https://www.kaggle.com).
+As part of this thesis, a notebook was developed that can be used to create a ready-to-use model for recognizing human emotions based on facial expressions. 
+The work was carried out as part of the [skillbox-computer-vision-project](https://www.kaggle.com/c/skillbox-computer-vision-project) competition on the [Kaggle](https://www.kaggle.com) platform.
 
-Ноутбук позволяет создать модель распознавания эмоций одного из следующих типов:
-#### 1. Модель, которая по выражению лица человека предсказывает вероятности эмоций, которые он испытывает.
-#### 2. Модель, которая может по выражению лица человека распознать уровни валентности (англ. *valence*) и интенсивности (англ. *arousal*) эмоции, которую он испытывает (по шкале от -1 до +1).
+The notebook allows to create an emotion recognition model of one of the following types:
+#### 1. A model that predicts the probabilities of emotions that a person is experiencing based on their facial expression.
+#### 2. A model that can recognize the valence and intensity levels of an emotion that a person is experiencing (on a scale from -1 to +1) based on their facial expression.
 
-Тип создаваемой модели определяется способом описания в настройках проекта эмоций, которые модель должна распознавать. Если эмоции описываются простым списком или кортежем из их названий (распознаваемых классов), то создается модель [1-го типа](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82). Если описание эмоций представлено словарем, в котором каждой эмоции сопоставляется пара значений, характеризирующих типичные уровни валентности и интенсивности этой эмоции, то создается модель [2-го типа](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
+The type of the created model is determined by the way the emotions that the model should recognize are described in the project settings. If emotions are described by a simple list or a tuple of their names (recognized classes), then a [type 1](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6% model is created D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%B B%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%B A%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0% BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1% 86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82). ​​If the description of emotions is presented by a dictionary in which each emotion is matched with a pair of values ​​characterizing typical levels of valence and intensity of this emotion, then a model [of the 2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D 0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D 0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0 %B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8 B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
 
-<details><summary>Примеры описания эмоций</summary>
+<details><summary>Examples of emotion descriptions</summary>
 <p>
 <table>
 <tr>
 <td>
-<p align="center"><b>Модель 1-го типа</b></p>
+<p align="center"><b>Type 1 model</b></p>
 
 ```python
 EMOTIONS = (
-    'anger', # гнев, злость
-    'contempt', # презрение
-    'disgust', # отвращение
-    'fear', # страх
-    'happy', # веселый
-    'neutral', # нейтральный
-    'sad', # грусть
-    'surprise', # удивленность
-    'uncertain', # неуверенность
+    'anger',
+    'contempt',
+    'disgust',
+    'fear',
+    'happy',
+    'neutral',
+    'sad',
+    'surprise',
+    'uncertain',
 )
 ```
 
 </td>
 <td>
-<p align="center"><b>Модель 2-го типа</b></p>
+<p align="center"><b>Type 2 model</b></p>
 
 ```python
 EMOTIONS = {
-    'anger': (-0.41, 0.79), # гнев, злость
-    'contempt': (-0.57, 0.66), # презрение
-    'disgust': (-0.67, 0.49), # отвращение
-    'fear': (-0.12, 0.78), # страх
-    'happy': (0.9, 0.16), # веселый
-    'neutral': (0.0, 0.0), # нейтральный
-    'sad': (-0.82, -0.4), # грусть
-    'surprise': (0.37, 0.91), # удивленность
-    'uncertain': (-0.5, 0.0), # неуверенность
+    'anger': (-0.41, 0.79),
+    'contempt': (-0.57, 0.66),
+    'disgust': (-0.67, 0.49),
+    'fear': (-0.12, 0.78),
+    'happy': (0.9, 0.16),
+    'neutral': (0.0, 0.0),
+    'sad': (-0.82, -0.4),
+    'surprise': (0.37, 0.91),
+    'uncertain': (-0.5, 0.0),
 }
 ```
 
@@ -55,11 +56,11 @@ EMOTIONS = {
 </p>
 </details>
 
-Создание модели происходит с использованием механизмов [Transfer Learning](https://keras.io/guides/transfer_learning/) и [Fine Tuning](https://keras.io/guides/transfer_learning/). Т.е. модель создается не с нуля (англ. *from scratch*), а на основе обученной модели классификации изображений, т.н. базовой модели. В качестве базовой модели может выступать любая модель из библиотеки [Keras Applications](https://keras.io/api/applications/), обученная на датасете [ImageNet](https://www.image-net.org/).
+The model is created using the [Transfer Learning](https://keras.io/guides/transfer_learning/) and [Fine Tuning](https://keras.io/guides/transfer_learning/) mechanisms. That is, the model is not created from scratch, but based on a trained image classification model, the so-called base model. Any model from the [Keras Applications](https://keras.io/api/applications/) library trained on the [ImageNet](https://www.image-net.org/) dataset can serve as a base model.
 
-Выбор базовой модели осуществляется в процессе выполнения ноутбука, исходя из точности её предсказаний на валидационном датасете [ImageNet](https://www.image-net.org/), её размера и измеренной скорости инференса результирующей модели, построенной на основе данной базовой модели (подробнее см. описание этапа ["Выбор базовой модели"](#23-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B9-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-base_model_selection)). Список базовых моделей, из которых осуществляется выбор задается в настройках проекта в виде словаря, в котором названию каждой базовой модели совоставляется пара справочных значений: её размер в МБ и её точность на валидационном датасете [ImageNet](https://www.image-net.org/) в процентах (см. Таблицу ["Available models"](https://keras.io/api/applications/), столбцы "Size (MB)" и "Top-1 Accuracy" соответственно).
+The base model is selected during the notebook execution based on the accuracy of its predictions on the [ImageNet](https://www.image-net.org/) validation dataset, its size, and the measured inference speed of the resulting model built on the basis of this base model (for more details, see the description of the ["Base Model Selection"](#23-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D0%BE%D0%B9-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-base_model_selection) stage). The list of base models from which the selection is made is specified in the project settings as a dictionary, in which the name of each base model is assigned a pair of reference values: its size in MB and its accuracy on the [ImageNet](https://www.image-net.org/) validation dataset in percent (see the ["Available models"](https://keras.io/api/applications/) table, the "Size (MB)" and "Top-1 Accuracy" columns, respectively).
 
-<details><summary>Пример списка базовых моделей</summary>
+<details><summary>Example list of base models</summary>
 <p>
     
 ```python
@@ -103,95 +104,94 @@ KERAS_BASE_MODELS = {
 </p>
 </details>
 
-## Архитектура модели
+## Model architecture
 
-Базовая модель обучена определять какой объект из датасета [ImageNet](https://www.image-net.org/) представлен на входном изображении на основании его признаков. За извлечение признаков отвечает свёрчтоная часть модели. За индентификацию объекта на основании его признаков отвечает последний, находящийся как бы вверху модели (англ. *on top*), полносвязный слой (англ. *dense layer*) с функцией активации типа [SoftMax](https://en.wikipedia.org/wiki/Softmax_function). Поскольку строящаяся модель решает совершенно другую задачу, то этот полносвязный слой в результирующей модели не нужен. Поэтому из базовой модели используются только её свёрточная часть. Вверху свёрточной части располагается слой пуллинга (англ. *pooling layer*). Тип пулиннга по-умолчанию средний (англ. *average pooling*), однако может применяться и максимальный (англ. *max pooling*). Тип применяемого пуллинга определяется пользователем и задается в настройках проекта.
+The base model is trained to determine which object from the [ImageNet](https://www.image-net.org/) dataset is presented in the input image based on its features. The convolutional part of the model is responsible for feature extraction. The last, fully connected layer (*dense layer*) with the [SoftMax](https://en.wikipedia.org/wiki/Softmax_function) activation function, located as if on top of the model, is responsible for identifying the object based on its features. Since the model being built solves a completely different problem, this fully connected layer is not needed in the resulting model. Therefore, only the convolutional part of the base model is used. At the top of the convolutional part is the pooling layer. The default pooling type is average pooling, but maximum pooling can also be used. The type of pooling used is determined by the user and is specified in the project settings.
 
-<details><summary>Пример задания пуллинга</summary>
+<details><summary>Example of a pooling setup</summary>
 <p>
 
 ```python
-BASE_MODEL_POOLINGS = 'avg' # Тип пулинга на выходе базовой моделей ('avg' - average, 'max' - max)
+BASE_MODEL_POOLINGS = 'avg' # Type of pooling at the output of the base models ('avg' - average, 'max' - max)
 ```
 </p>
 </details>
 
-Для индентификации эмоций на основании полученных с помощью базовой модели признаков на нее сверху (англ. *on top*) может добавляться один или несколько полносвязных слоев с функцией активации типа [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)). Кроме того, для обеспечения регуляризации в процессе обучения перед каждым таким слоем располагается слой исключения (англ. *dropout layer*). Такой слой в процессе обучения случайным образом обнуляет заданную часть входных нейронов. При этом оставшиеся входные нейроны пропроционально увеличиваются таким образом, чтобы сумма всех входных нейронов не изменилась.
+To identify emotions based on the features obtained using the base model, one or more fully connected layers with a [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) type activation function can be added on top of it. In addition, to ensure regularization during the training process, a dropout layer is placed before each such layer. During the training process, such a layer randomly zeroes a given portion of the input neurons. At the same time, the remaining input neurons are proportionally increased so that the sum of all input neurons does not change.
 
-Пользователь может задать различные варианты количества таких блоков слоев (слой исключения + полносвязный слой), варианты количества выходных нейронов в полносвязных слоях, а также варианты величин доли обнуляемых нейронов в слоях исключения. В процессе выполнения ноутбука из этих вариантов будет найден оптимальный (подробнее см. этап ["3.3. Выбор лучшей полносвязной модели"](#33-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%B9-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D0%B9-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-model_on_top_selection)).
+The user can specify different options for the number of such layer blocks (dropout layer + fully connected layer), options for the number of output neurons in fully connected layers, as well as options for the values ​​of the proportion of neurons to be zeroed in dropout layers. During the execution of the notebook, the optimal one will be found from these variants (for more details, see step ["3.3. Selecting the best fully connected model"](#33-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%B9-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D0%B9-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-model_on_top_selection)).
 
-Все выперечисленные слои образуют условно названную "верхнюю" модель (англ. *on top model*).
+All of the listed layers form the conventionally named "on top model".
 
-<details><summary>Пример задания вариантов конфигураций блоков из слоев исключения и полносвязных слоёв</summary>
+<details><summary>Example of setting configuration options for blocks from dropout layers and fully connected layers</summary>
 <p>
     
 ```python
-MODEL_ON_TOP_DENSE_NUMS = [1, 2] # Варианты количества дополнительных полносвязных слоев
-MODEL_ON_TOP_DENSE_UNITS = [1024, 2048] # Варианты количества выходных нейронов в дополнительном полносвязном слое
-MODEL_ON_TOP_DROPOUT_RATES = [.0, .2] # Варианты доли исключаемых данных перед подачей в полносвязный слой при обучении
-```
+MODEL_ON_TOP_DENSE_NUMS = [1, 2] # Options for the number of additional fully connected layers
+MODEL_ON_TOP_DENSE_UNITS = [1024, 2048] # Options for the number of output neurons in the additional fully connected layer
+MODEL_ON_TOP_DROPOUT_RATES = [.0, .2] # Options for the proportion of data to drop before feeding into the fully connected layer during training```
     
 </p>
 </details>
 
-При построении модели [1-го типа](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82) к последнему блоку добавляется ещё один полносвязный слой с функцией активации типа [SoftMax](https://en.wikipedia.org/wiki/Softmax_function) и количеством выходных нейронов, соответствующих количеству распознаваемых эмоций. В этом случае на выходе модели при инференсе формируется вектор верояностей того, какую эмоцию выражает лицо человека на входном изображении.
+When constructing the model [1st type](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D 0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6 %D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0% BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0% BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0 %BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1 %86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-% D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82) another fully connected layer with the function is added to the last block activation of the [SoftMax](https://en.wikipedia.org/wiki/Softmax_function) type and the number of output neurons corresponding to the number of recognized emotions. In this case, at the output of the model, during inference, a vector of probabilities is formed for what emotion the person's face expresses at the input image.
 
-При построении модели [2-го типа](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1) к последнему блоку также добавляется ещё один полносвязный слой. Но этот слой имеет только 2 выходных нейрона, а для активации используется функция [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) причем с ограничением значения до 2. Т.о. выходные нейроны этого слоя могут принимать значения в диапазоне от 0 до 2. Но так как предсказываемые значения валентости и интенсивности должны находиться в диапазоне от -1 до 1, то в конце модели размещается ещё один слой, который вычитает 1 из значений выходных нейронов предыдщуего полносвязного слоя.
+When constructing the model [2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1% 80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD %D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0% D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0% BB%D0%B5%D0%BD%D1%82%D0%BD%D 0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1 %82%D0%B5%D0%BD%D1%81%D 0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1% 8D%D0%BC%D0%BE%D1%86%D0 %B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8% D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88% D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1) another fully connected layer is also added to the last block. But this layer has only 2 output neurons, and the [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) function is used for activation, with a value limit of up to 2. Thus, the output neurons of this layer can take values ​​in the range from 0 to 2. But since the predicted values ​​of valence and intensity must be in the range from -1 to 1, then at the end of the model another layer is placed, which subtracts 1 from the values ​​of the output neurons of the previous fully connected layer.
 
-Дополнительно в целях повышения качества обучения модели за счёт увеличения разнообразия входных изображений перед базовой моделью добавляется модель аугментации (англ. *augmentation model*). Эта модель выполняет случайное преобразование входного изображения в процессе обучения перед подачей на вход базовой модели. Модель аугментации случайным образом немного поворачивает изображение, изменяет его контрастность и яркость, а также оуществляет его зеркальное отображение. Пользователь в настройках проекта может определить диапазоны этих преобразований.
+Additionally in In order to improve the quality of model training by increasing the diversity of input images, an augmentation model is added to the base model. This model randomly transforms the input image during training before feeding it to the base model. The augmentation model randomly rotates the image slightly , changes its contrast and brightness, and also mirrors it. The user can define the ranges of these transformations in the project settings.
 
 <details><summary>Пример настройки аугментации входных изображений</summary>
 <p>
     
 ```python
-RANDOM_FLIP = 'horizontal' # Тип случайного зеркального отражения изображения
-RANDOM_ZOOM = .2 # Максимальное изменение масштаба изображения
-RANDOM_ROTATION_FACTOR = .1 # Максимальный поворт изображения (в долях от полного оборота - 360°)
-RANDOM_CONTRACT_FACTOR = .2 # Максимальное изменение контраста (в долях от исходного значения)
-RANDOM_BRIGHTNESS_FACTOR = .2 # Максимальное изменение яркости (в долях от исходного значения)
+RANDOM_FLIP = 'horizontal' # Random image flip type
+RANDOM_ZOOM = .2 # Maximum image scale change
+RANDOM_ROTATION_FACTOR = .1 # Maximum image rotation (in fractions of a full rotation - 360°)
+RANDOM_CONTRACT_FACTOR = .2 # Maximum contrast change (in fractions of the original value)
+RANDOM_BRIGHTNESS_FACTOR = .2 # Maximum brightness change (in fractions of the original value)
 ```
     
 </p>
 </details>
 
-Т.о. образом результирующая модель при обучении состоит как бы из трех последовательно (англ. *Sequential*) соединенных между собой моделей:
-- модель аугментации (`augmention model`);
-- базовая модель (`base model`);
-- верхняя модель (`on top model`).
+Thus, the resulting model during training consists of three sequentially connected models:
+- augmentation model;
+- base model;
+- on top model.
 
-<details><summary>Структурные схемы модели в режиме обучения</summary>
+<details><summary>Structural diagrams of the model in training mode</summary>
 <p>
 <tr>
 <td>
-<p align="center"><b>1-го типа</b></p>
-<img  width=100% src=https://user-images.githubusercontent.com/107345313/200283993-4ec70b6c-9da7-4355-891a-564332559041.svg>
+<p align="center"><b>1st type 1</b></p>
+<img width=100% src=https://user-images.githubusercontent.com/107345313/200283993-4ec70b6c-9da7-4355-891a-564332559041.svg>
 <p></p>
 </td>
 </tr>
 <tr>
-<td>    
-<p align="center"><b>2-го типа</b></p>
-<img  width=100% src=https://user-images.githubusercontent.com/107345313/200284152-5faabe63-43ab-4593-828b-2684ef35b70f.svg>
+<td>
+<p align="center"><b>s 2</b></p>
+<img width=100% src=https://user-images.githubusercontent.com/107345313/200284152-5faabe63-43ab-4593-828b-2684ef35b70f.svg>
 <p></p>
 </td>
 </tr>
 </p>
 </details>
 
-Как было обозначено выше, модель аугментации и слои исключения в верхней модели не участвуют в работе модели в режиме инференса. Т.е. на вход базовой модели подается непосредственно входное изображение и не происходит обнуление входных нейронов полносвязных слоев верхней модели. Поэтому структуру модели в режиме инференса можно представить в упрощенном виде без этих элементов.
+As noted above, the augmentation model and the exclusion layers in the upper model do not participate in the operation of the model in the inference mode. That is, the input image is fed directly to the input of the base model and the input neurons of the fully connected layers of the upper model are not zeroed. Therefore, the structure of the model in the inference mode can be presented in a simplified form without these elements.
 
-<details><summary>Структурные схемы модели в режиме инференса</summary>
+<details><summary>Structural diagrams of the model in inference mode</summary>
 <p>
 <tr>
 <td>
-<p align="center"><b>1-го типа</b></p>
+<p align="center"><b>1st type</b></p>
 <img  width=100% src=https://user-images.githubusercontent.com/107345313/200292114-4c6a4e79-a151-463c-a3d9-e22bfa526efa.svg>
 <p></p>
 </td>
 </tr>
 <tr>
 <td>    
-<p align="center"><b>2-го типа</b></p>
+<p align="center"><b>2nd type</b></p>
 <img  width=100% src=https://user-images.githubusercontent.com/107345313/200292181-72ec54e2-f367-4c06-854f-ce541722d108.svg>
 <p></p>
 </td>
@@ -199,112 +199,113 @@ RANDOM_BRIGHTNESS_FACTOR = .2 # Максимальное изменение яр
 </p>
 </details>
 
-## Класс для внедрения обученной модели
+## Class for implementing a trained model
 
-Для использования обученной модели в составе приложения распознавания эмоций предумострен специальный класс `FaceEmotionRecognitionNet`. Этот класс обеспечивает подготовку входного изображения лица перед подачей в модель, получение предсказаний модели и выделение из предсказания модели значимой информации. 
+A special class `FaceEmotionRecognitionNet` is provided for using a trained model as part of an emotion recognition application. This class prepares the input face image before feeding it to the model, obtains model predictions, and extracts meaningful information from the model predictions.
 
-При создании класса необходимо в него передать путь к файлу обученной модели (параметр `file_path`) и описание распознаваемых моделью эмоций (`emotions`). Тип описания эмоций показыает классу модель какого типа используется. Если эмоции описаны с помощью простого списка или кортежа из их названий, то это модель [1-го типа](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82). Если описание эмоций представлено словарем, в котором каждой эмоции сопоставляется пара значений, характеризирующих типичные уровни валентности и интенсивности этой эмоции, то это модель [2-го типа](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
+When creating a class, you need to pass the path to the trained model file (the `file_path` parameter) and a description of the emotions recognized by the model (`emotions`). The type of emotion description shows the class what type of model is used. If emotions are described using a simple list or a tuple of their names, then this is a [1st type](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D 0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6% D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%B B%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%B A%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0% BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1% 86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82). ​​If the description of emotions is presented by a dictionary in which each emotion is matched with a pair of values ​​characterizing the typical levels of valence and intensity of this emotion, then this is a model [of the 2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0 %BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0 %B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B 8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
 
-Данный класс имеет только один метод - `predict`, который на основании массива, представляющего изображение лица (аргумент `face_image`), в зависимости от типа модели возвращает:
-- [1-го типа](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82) - название той эмоции (`emotion`), которую наиболее вероятно выражает лицо на входном изображении, и вероятность (`probability`), с которой модель распознала эту эмоцию;
-- [2-го типа](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1) - название той эмоции (`emotion`), типичные значения валентности и интенсивности которой наиболее близко расположены к предсказанным моделью значениям, расстояние между ними (`error`) и сами предсказанные моделью значения валентности (`valence`) и интенсивности (`arousal`) эмоции, которую выражает лицо на входном изображении. 
+This class has only one method - `predict`, which, based on an array representing a face image (argument `face_image`), depending on the model type, returns:
+- [1st type](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D 0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6 %D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0% BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0% BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0 %BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1 %86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82) - the name of the emotion (`emotion`) that the face in the input image most likely expresses, and the probability (`probability`) with which the model recognized this emotion;
+- [2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D 0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D 0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0 %B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8 B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1) - the name of the emotion (`emotion`) whose typical valence and intensity values ​​are closest to the values ​​predicted by the model, the distance between them (`error`) and the valence and intensity (`arousal`) values ​​predicted by the model of the emotion expressed by the face in the input image.
+- 
+## Data for creating the model
 
-## Данные для создания модели
+### Training data
 
-### Тренировочные данные
+The dataset attached to the [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data) competition is used to train the model. The dataset is a set of files distributed across folders with emotion names. However, any other emotion dataset with the same markup can be used for training. Such a dataset should be placed as an archive in the [Google Drive](https://drive.google.com/) cloud storage. When running the notebook, this dataset is downloaded from the link specified in the project settings and extracted from the archive to the project folder.
 
-Для обучения модели используется датасет, прилагаемый к соревнованию [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data). Датасет представляет собой набор файлов, распределённых по папкам с названиями эмоций. Однако, для обучения можно использовать любой другой датасет эмоций с такой же разметкой. Такой датасет должен быть размещен в виде архива в облачном хранилище [Google Диск](https://drive.google.com/). При выполнении ноутбука данный датасет скачивается по ссылке, указанной в настройках проекта, и извлекается из архива в папку проекта.
-
-<details><summary>Пример указания ссылки на тренировочный датасет</summary>
+<details><summary>Example of specifying a link to a training dataset</summary>
 <p>
     
 ```python
-TRAIN_DATASET_URL = 'https://drive.google.com/file/d/1TG9P5B2k3eTbC4XDxDmEc07dyAORPC16/view?usp=sharing' # Ссылка на архив тренировочного датасета
-TRAIN_DATASET_EXT = 'zip' # Тип (расширение файла) архива тренировочного датасета
+TRAIN_DATASET_URL = 'https://drive.google.com/file/d/1TG9P5B2k3eTbC4XDxDmEc07dyAORPC16/view?usp=sharing' # Link to a training dataset
+TRAIN_DATASET_EXT = 'zip' # Type (file extension) of the training dataset archive
 ```
     
 </p>
 </details>
 
-### Тестовые данные
+### Test data
 
-Для оценки качества работы модели в процессе обучения также используется датасет, прилагаемый к соревнованию [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data). Датасет также представляет собой набор файлов. Но этот датасет не имеет разметки, а оценка качества модели может осуществляться только на самой платформе. При выполнении ноутбука данный датасет также скачивается по ссылке, указанной в настройках проекта, и извлекается из архива в папку проекта.
+To evaluate the quality of the model during the training process, the dataset attached to the competition [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data) is also used. The dataset is also a set of files. But this dataset has no markup, and the quality of the model can only be assessed on the platform itself. When running a notebook, this dataset is also downloaded from the link specified in the project settings and extracted from the archive to the project folder.
 
-<details><summary>Пример указания ссылки на тестовый датасет</summary>
+<details><summary>Example of specifying a link to a test dataset</summary>
 <p>
     
 ```python
-TEST_DATASET_URL = 'https://drive.google.com/file/d/12QrDrLT1F-X7UycvOoApXFqxTw3Zx93K/view?usp=sharing' # Ссылка на архив тестового датасета
-TEST_DATASET_EXT = 'zip' # Тип (расширение файла) архива тестового датасета
+TEST_DATASET_URL = 'https://drive.google.com/file/d/12QrDrLT1F-X7UycvOoApXFqxTw3Zx93K/view?usp=sharing' # Link to a test dataset
+TEST_DATASET_EXT = 'zip' # Type (file extension) of the test dataset archive
 ```
     
 </p>
 </details>
 
-### Оценка качества модели
-Как было указано выше для проверки точности предсказаний на тестовом датасете используется платформа [Kaggle](https://www.kaggle.com/). Для этого в ноутбуке создан специальный класс `Kaggle`, который используя [Kaggle API](https://github.com/Kaggle/kaggle-api), реализует отправку на проверку файла с предсказаниями модели в виде csv-файла и прием результатов проверки публичной (Public) и приватной (Private) части предсказаний. Метрикой качества работы модели принято среднее значения этих оценок. Для подключения ноутбука к платформе требуется `API Token` в виде json-файла. Пользователю необходимо предварительно скопировать его с платформы в разделе редактирования профиля. Полученный файл `API Token` необходимо разместить в облачном хранилище [Google Диск](https://drive.google.com/) и указать ссылку на него в настройках проекта.
+### Model Quality Assessment
 
-<details><summary>Пример указания ссылки на файл токена [Kaggle API](https://github.com/Kaggle/kaggle-api)</summary>
+As stated above, the [Kaggle](https://www.kaggle.com/) platform is used to check the accuracy of predictions on the test dataset. For this purpose, a special `Kaggle` class was created in the notebook, which, using the [Kaggle API](https://github.com/Kaggle/kaggle-api), implements sending a file with the model predictions for verification in the form of a csv file and receiving the results of checking the public (Public) and private (Private) parts of the predictions. The average value of these assessments is taken as the metric for the quality of the model. To connect the notebook to the platform, an `API Token` is required as a json file. The user must first copy it from the platform in the profile editing section. The resulting `API Token` file must be placed in the [Google Drive](https://drive.google.com/) cloud storage and a link to it must be specified in the project settings.
+
+<details><summary>Example of specifying a link to a token file [Kaggle API](https://github.com/Kaggle/kaggle-api)</summary>
 <p>
     
 ```python
-KAGGLE_API_TOKEN_URL = 'https://drive.google.com/file/d/*********************************/view?usp=sharing' # Ссылка на токен для подключения к платформе Kaggle через API
+KAGGLE_API_TOKEN_URL = 'https://drive.google.com/file/d/*********************************/view?usp=sharing' # Link to the token for connecting to the Kaggle platform via API
 ```
 
 </p>
 </details>
 
-Кроме этого пользователю необходимо зарегистрироваться в качестве участника соревнования [skillbox-computer-vision-project](https://www.kaggle.com/c/skillbox-computer-vision-project).
+In addition, the user must register as a participant in the [skillbox-computer-vision-project](https://www.kaggle.com/c/skillbox-computer-vision-project) competition.
 
-## Пайпланы
-Процесс создания модели разделен на три независимых стадии (пайплайна), которые выполняются последовательно:
-1. Сбор информации о базовых моделях в [Keras Applications](https://keras.io/api/applications/) (`KERAS_BASE_MODELS_PROCESSING_PIPELINE`).
-2. Предобработка изображений (`IMAGE_PREPROCESSING_PIPELINE`).
-3. Создание модели (`MODEL_BUILDING_PIPELINE`).
+## Pipelines
+The model creation process is divided into three independent stages (pipelines), which are executed sequentially:
+1. Collecting information about base models in [Keras Applications](https://keras.io/api/applications/) (`KERAS_BASE_MODELS_PROCESSING_PIPELINE`).
+2. Image preprocessing (`IMAGE_PREPROCESSING_PIPELINE`).
+3. Model creation (`MODEL_BUILDING_PIPELINE`).
 
-Результаты выполнения этапов пайплайна сохраняются в csv-файлах в папке пайплайна в общем хранилище. Имена папок пайплайна совпадают с названиями пайплайнов, заданными в настройках пайплайнов (параметр `name`). Имена csv-файлов отчётов также задаются в настройках пайплайнов (параметр `report_csv`).
+The results of the pipeline stages are saved in csv files in the pipeline folder in the shared storage. The names of the pipeline folders match the names of the pipelines specified in the pipeline settings (the `name` parameter). The names of the report csv files are also specified in the pipeline settings (the `report_csv` parameter).
 
-<details><summary>Поля файлов отчёта выполнения пайплайна</summary>
+<details><summary>Pipeline execution log file fields</summary>
 <p>
-    
-- `stage` - название этапа;
-- `params` - конфигурационные параметры этапа;
-- `platform` - платформа выполнения этапа; 
-- `start_time` - время запуска выполнения этапа;
-- `update_time` - время обновления статуса этапа;
-- `state` - статус выполнения этапа: 
-    * `skipped (not ready)` - пропуск из-за неготовности (не выполнен предудыщий этап(-ы));
-    * `skipped (platform)` - пропуск из-за несоответствия платформы (пайплайн должен выполняться на другой платформе);
-    * `run started` - выполняется итерация этапа;
-    * `started` - этап выполняется;
-    * `complete` - этап выполнен.
-    
+
+- `stage` - stage name;
+- `params` - stage configuration parameters;
+- `platform` - stage execution platform;
+- `start_time` - stage execution start time;
+- `update_time` - stage status update time;
+- `state` - stage execution status:
+    * `skipped (not ready)` - skipped due to not being ready (previous stage(s) not executed);
+    * `skipped (platform)` - skipped due to platform mismatch (pipeline must be executed on a different platform);
+    * `run started` - stage iteration is in progress;
+    * `started` - stage is in progress;
+    * `complete` - stage is complete.
+
 </p>
 </details>
 
-Каждый пайплайн в свою очередь состоит из нескольких этапов, которые также выполняются последовательно. Настройки этапов пайплайна указываются в настройках пайплайна в виде списка (параметр `stages`), одновременно определяющего последовательность их выполнения.
+Each pipeline in turn consists of several stages, which are also executed sequentially. The pipeline stage settings are specified in the pipeline settings as a list (the `stages` parameter), which also determines the sequence of their execution.
 
-В настройках каждого этапа присутствует его название (параметр `name`) и специфический набор его настроечных параметров (параметр `params`). Кроме того любой этап на усмотрение пользователя может выполняться как на локальном компьютере в [JupyterNotebook](https://jupyter.org/) или [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/index.html), так и удаленно в [Google Colab](https://colab.research.google.com/). Платформа для выполнения этапа также задается в его настройках (параметр `platform`). Такая опция позволяет выполнять этапы на наиболее подходящей для этого платформе. Так этапы, в процессе выполнения которых производится инференс или обучение базовой части модели, лучше выполнять на [Google Colab](https://colab.research.google.com/) с использованием аппаратного ускорителя GPU или TPU. А остальные этапы, возможно, быстрее будут выполняться на локальном компьютере.
+The settings for each stage include its name (the `name` parameter) and a specific set of its configuration parameters (the `params` parameter). In addition, any stage, at the user's discretion, can be executed either on a local computer in [JupyterNotebook](https://jupyter.org/) or [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/index.html), or remotely in [Google Colab](https://colab.research.google.com/). The platform for executing the stage is also specified in its settings (the `platform` parameter). This option allows you to execute stages on the most suitable platform for this. So, the stages during which inference or training of the basic part of the model is performed are best performed on [Google Colab](https://colab.research.google.com/) using a hardware accelerator GPU or TPU. And the remaining stages may be faster on a local computer.
 
-Для того, чтобы облегчить переключение между платформами, все данные сохраняются в едином облачном хранилище [Google Диск](https://drive.google.com/). Так все данные необходимые для выполнения этапа пайплайна скачиваются в папку проекта на платформе исполнения из единого хранилища. А по завершении этапа протокол и результаты его выполнения сохраняются в виде csv-файлов в папке пайплайна. Полученные в результате выполения датасеты, логи обучения моделей и сами модели сохраняются в папке проекта в едином хранилище в виде zip-архивов.
+In order to facilitate switching between platforms, all data is saved in a single cloud storage [Google Drive](https://drive.google.com/). So, all the data required to perform a pipeline stage is downloaded to the project folder on the execution platform from a single storage. And upon completion of the stage, the protocol and the results of its execution are saved as csv files in the pipeline folder. The resulting datasets, model training logs and the models themselves are saved in the project folder in a single storage as zip archives.
 
-Перед началом работы с ноутбуком необходмо установить на локальный компьютер приложение [Google Диск](https://www.google.com/intl/ru_ru/drive/download/) и подключить облачное хранилище пользователя в качестве логического диска локального компьютера.
+Before you start working with your notebook, you need to install the [Google Drive](https://www.google.com/intl/ru_ru/drive/download/) application on your local computer and connect the user's cloud storage as a logical drive on your local computer.
 
-<details><summary>Пример настроек путей к папкам проекта</summary>
+<details><summary>Example of project folder path settings</summary>
 <p>
-    
+
 ```python
-PROJECT_NAME = 'skillbox-computer-vision-project' # Название проекта
-LOCAL_PROJ_PATH = f'D:/{PROJECT_NAME}' # Путь к папке проекта на локальном компьютере
-COLAB_PROJ_PATH = f'/content/{PROJECT_NAME}' # Путь к папке проекта в сессионном хранилище Google Colab
-LOCAL_GD_PROJ_PATH = f'G:/Мой диск/{PROJECT_NAME}' # Путь к папке проекта на Google Диске'е на локальном компьютере
-COLAB_GD_PROJ_PATH = f'/content/drive/MyDrive/{PROJECT_NAME}' # Путь к папке проекта на Google Диск'е в Google Colab
+PROJECT_NAME = 'skillbox-computer-vision-project' # Project name
+LOCAL_PROJ_PATH = f'D:/{PROJECT_NAME}' # Path to the project folder on the local computer
+COLAB_PROJ_PATH = f'/content/{PROJECT_NAME}' # Path to the project folder in the Google Colab session storage
+LOCAL_GD_PROJ_PATH = f'G:/My Drive/{PROJECT_NAME}' # Path to the project folder on Google Drive on the local computer
+COLAB_GD_PROJ_PATH = f'/content/drive/MyDrive/{PROJECT_NAME}' # Path to the project folder on Google Drive in Google Colab
 ```
 
 </p>
 </details>
 
-Кроме того для повышения удобства использования ноутбука при каждом его запуске производится автоматическая установка пакетов необходимых для его работы на конкретной платформе.
+In addition, to improve the convenience of using the notebook, each time it is started, the packages necessary for its operation on a specific platform are automatically installed.
 
 ### 1. Сбор информации о базовых моделях в [Keras Applications](https://keras.io/api/applications/) (`KERAS_BASE_MODELS_PROCESSING_PIPELINE`)
 
@@ -353,143 +354,191 @@ KERAS_BASE_MODELS_PROCESSING_PIPELINE = {
     
 </p>
 </details>
+### 1. Collecting information about base models in [Keras Applications](https://keras.io/api/applications/) (`KERAS_BASE_MODELS_PROCESSING_PIPELINE`)
 
-#### 1.1. Получение информации о размерах входных изображений и векторов признаков (`sizes_retrieving`)
-Первой целью данного этапа является получение информации об оптимальных размерах входных изображений для каждой базовой модели. Изменно до этого размера будут масшабироваться изображения, подаваемые на вход модели при обучении и использовании для получения предсказаний.
+<details><summary>Example of setting up a pipeline</summary>
+<p>
 
-Второй целью является получение информации о размерах векторов признаков на выходе последнего слоя пуллинга каждой базовой модели. Эта информация нужна для создания верхней модели, обеспечивающей преобразование вектора признаков в зависимости от типа модели либо в либо в вектор вероятностей эмоций, либо в пару значения валентности и интенсивности эмоции.
+``python
+KERAS_BASE_MODELS_PROCESSING_PIPELINE = {
+    'name': 'keras_base_models_processing',
+    'description': 'Pipeline for collecting information about base models in Keras Applications',
+    'report_csv': 'pipeline_base_models_processing.csv',
+    'stages': [
+        {
+            'name': 'sizes_retrieving',
+            'description': 'Getting information about the sizes of input images and vectors features',
+            'platform': 'colab', # Runs in Google Colab
+            'params': {
+                'result_csv': 'base_model_sizes.csv', # Path to the file with the selected models
+            }
+        },
+        {
+            'name': 'inference_time_measuring',
+            'description': 'Measuring the inference time of models',
+            'platform': 'colab', # Runs in Google Colab
+            'params': {
+                'batch_size': 1, # Batch size
+                'batches': 1, # Number of batches in the dataset
+                'repetitions': 100, # Number of repetitions
+                'result_csv': 'model_inference_times.csv', # Path to the file with the selected models
+            }
+        },
+        {
+            'name': 'base_model_selection',
+            'description': 'Base model selection',
+            'platform': 'colab', # Runs in Google Colab
+            'params': {
+                'inference_time_weight': INFERENCE_TIME_WEIGHT, # Inference time weight for base model selection
+                'top1_accuracy_weight': 1 - INFERENCE_TIME_WEIGHT, # Accuracy weight for base model selection
+                'process_csv': 'base_model_selection.csv', # Path to file with base model selection process data
+                'result_csv': 'base_model.csv', # Path to file with description of selected base model
+            }
+        },
+    ]
+}
+```
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+</p>
+</details>
+
+#### 1.1. Retrieving information about the sizes of input images and feature vectors (`sizes_retrieving`)
+The first goal of this stage is to obtain information about the optimal sizes of input images for each base model. Images fed to the model during training and use for obtaining predictions will be scaled to this size.
+
+The second goal is to obtain information about the sizes of feature vectors at the output of the last pooling layer of each base model. This information is needed to create the upper model, which provides the transformation of the feature vector, depending on the model type, either into a vector of emotion probabilities or into a pair of valence and intensity values.
+
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
 
 `keras_base_models_processing/base_model_sizes.csv`:
-- `base_model_name` - название базовой модели;
-- `image_size` - оптимальный размер входного изображения;
-- `feature_size` - размер вектора признаков.
-    
+- `base_model_name` - the name of the base model;
+- `image_size` - the optimal size of the input image;
+- `feature_size` - feature vector size.
+
 </p>
 </details>
 
-#### 1.2. Измерение времени инференса (`inference_time_measuring`)
-Целью данного этапа является оценка времени инференса модели, состоящей из базовой модели в сочетании с самой "тяжелой" верхней моделью (моделью, содержащей максимальное количество полносвязных слоев максимального размера). Эта информация позволяет исключить из дальнейшего рассмотрения базовые модели, имеющие недостаточное быстродействие.
+#### 1.2. Measuring inference time (`inference_time_measuring`)
+The goal of this step is to estimate the inference time of a model consisting of a base model combined with the "heaviest" upper model (the model containing the maximum number of fully connected layers of the maximum size). This information allows us to exclude base models with insufficient performance from further consideration.
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the step execution results</summary>
 <p>
-    
+
 `keras_base_models_processing/model_inference_times.csv`:
-- `base_model_name` - название базовой модели;
-- `inference_time` - среднее время инференса модели в секундах.
+- `base_model_name` - the name of the base model;
+- `inference_time` - the average inference time of the model in seconds.
 
 </p>
 </details>
 
-#### 1.3. Выбор базовой модели (`base_model_selection`)
-Целью данного этапа является выбор базовой модели, которая будет использована при построении результирующей модели. Выбор происходит на основании наилучшего сочетания быстродействия и точности модели, показанной на валидационном датасете [ImageNet](https://www.image-net.org/), с учетом весов этих метрик, заданных пользователем (параметры `inference_time_weight` и `top1_accuracy_weight` соответственно).
+#### 1.3. Base model selection (`base_model_selection`)
+The goal of this stage is to select a base model that will be used to build the resulting model. The selection is based on the best combination of performance and accuracy of the model shown on the [ImageNet](https://www.image-net.org/) validation dataset, taking into account the weights of these metrics specified by the user (parameters `inference_time_weight` and `top1_accuracy_weight`, respectively).
 
-Кроме вышеуказанных метрик на выбор базовой модели влияет её размер. Пользователь может ограничть круг рассматриваемых моделей, задав максимально допустимый размер модели в МБ (параметр `BASE_MODEL_MAX_SIZE` в разеделе "Основные настройки").
+In addition to the above metrics, the selection of the base model is affected by its size. The user can limit the range of models considered by setting the maximum allowable model size in MB (parameter `BASE_MODEL_MAX_SIZE` in the "Basic settings" section).
 
-Для каждой отобранной модели начисляются очки за точность и очки за быстродействия. Очки за точность начисляются согласно следующему правилу:  
+For each selected model, points are awarded for accuracy and points for performance. Accuracy points are awarded according to the following rule:
 
 $$Sa_i = {a_i - min(a_1, ..., a_n)\over max(a_1, ..., a_n) - min(a_1, ..., a_n)},$$
-где&nbsp; $a_i$ - точность оцениваемой модели;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $a_1, ..., a_n$ - точность оцениваемых моделей.
+where&nbsp; $a_i$ is the accuracy of the model being evaluated;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$a_1, ..., a_n$ is the accuracy of the models being evaluated.
 
-Очки за быстродействие начисляются согласно следующему правилу:
+Performance points are awarded according to the following rule:
 $$St_i = {max(t_1, ..., t_n) - t_i \over max(t_1, ..., t_n) - min(t_1, ..., t_n)}$$
-где&nbsp; $t_i$ - время инференса оцениваемой модели;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $t_1, ..., t_n$ - время инференса оцениваемых моделей.
+where&nbsp; $t_i$ is the inference time of the model being evaluated;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $t_1, ..., t_n$ - inference time of the models being evaluated.
 
-Суммарные взвешенные очки за точность и быстродействия учитывают соотношение важности точности и быстродействия модели и определяются по следующему правилу.
+The total weighted points for accuracy and performance take into account the ratio of the importance of accuracy and performance of the model and are determined by the following rule.
 $$S_i = Sa_i Wa + St_i Wt $$
-где&nbsp; $Sa_i$ - очка за точность оцениваемой модели;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $St_i$ - очки за быстродействие оцениваемой модели;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Wa$ - вес оценки за точность;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Wt$ - вес оценки за быстродействие.
+where&nbsp; $Sa_i$ - points for the accuracy of the model being evaluated;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $St_i$ - points for the performance of the model being evaluated;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Wa$ - weight of the accuracy score;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Wt$ - the weight of the performance score.
 
-Для дальнейшей работы выбирается модель, имеющая ранг #1, т.е. лучшую взвешенную оценку за точность и быстродействие. 
-Её название и основные характеристики сохраняются в результирующий csv-файл.
-    
-<details><summary>Поля csv-файла отчёта о выполнении этапа</summary>
+For further work, the model with rank #1 is selected, i.e. the best weighted score for accuracy and performance.
+
+Its name and main characteristics are saved in the resulting csv file.
+
+<details><summary>Fields of the stage execution report csv file</summary>
 <p>
 
 `keras_base_models_processing/base_model_selection.csv`:
-- `base_model_name` - название базовой модели,
-- `top1_accuracy` - точность базовой модели на валидационном датасете [ImageNet](https://www.image-net.org/),
-- `size` - размер базовой модели в МБ,
-- `colab_inference_time` - измеренное на предыдущем этапе время инференса в секундах,
-- `top1_accuracy_score` - очки за точность,
-- `colab_inference_time_score` - очки за быстродействие,
-- `weighted_score` - взвешенные очки за точность и быстродействие,
-- `rank` - ранг соответствия модели.
+- `base_model_name` - base model name,
+- `top1_accuracy` - base model accuracy on the [ImageNet](https://www.image-net.org/) validation dataset,
+- `size` - base model size in MB,
+- `colab_inference_time` - inference time measured in the previous stage in seconds,
+- `top1_accuracy_score` - points for accuracy,
+- `colab_inference_time_score` - points for performance,
+- `weighted_score` - weighted points for accuracy and performance,
+- `rank` - model compliance rank.
 
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
 
 `keras_base_models_processing/base_model.csv`:
-- `base_model_name` - название, выбранной базовой модели;
-- `image_size` - размер входного изображения, выбранной базовой модели;
-- `feature_size` - размер вектора признаков, выбранной базовой модели.
+- `base_model_name` - the name of the selected base model;
+- `image_size` - the size of the input image of the selected base model;
+- `feature_size` - the size of the feature vector of the selected base model.
 
 </p>
 </details>
 
-### 2. Предобработка изображений (`IMAGE_PREPROCESSING_PIPELINE`).
-Данный пайплайн предназначен для подготовки тренировочных и тестовых датасетов. В процессе выполнения пайплайна производится обрезка изображений до области лица, чтобы убрать лишние детали, которые могут "путать" модель. Дополнительно из тренировочного датасета исключаются изображения слишком похожих между собой лиц и изображения лиц, правильность разметки которых вызывает сомнения.
+### 2. Image preprocessing (`IMAGE_PREPROCESSING_PIPELINE`).
+This pipeline is designed to prepare training and test datasets. During the pipeline execution, images are cropped to the face area to remove unnecessary details that may "confuse" the model. Additionally, images of faces that are too similar to each other and images of faces whose labeling is questionable are excluded from the training dataset.
 
-Поиск лиц на изображениях осуществляется с помощью предобученного детектора лиц [MTCNN](https://github.com/ipazc/mtcnn) авторства Iván de Paz Centeno <ipazc@unileon.es>. Детектор построен на базе многозадачной сверточной нейронной сети (англ. *Multi-task Cascaded Convolutional Network*), описанной в статье Kaipeng Zhang, Zhanpeng Zhang, Zhifeng Li и Yu Qiao "[Joint face detection and alignment using multitask cascaded convolutional networks](https://arxiv.org/abs/1604.02878)".
+Faces in images are searched using the pretrained face detector [MTCNN](https://github.com/ipazc/mtcnn) by Iván de Paz Centeno <ipazc@unileon.es>. The detector is built on the basis of a multi-task convolutional neural network (*Multi-task Cascaded Convolutional Network*), described in the article by Kaipeng Zhang, Zhanpeng Zhang, Zhifeng Li and Yu Qiao "[Joint face detection and alignment using multitask cascaded convolutional networks](https://arxiv.org/abs/1604.02878)".
 
-<details><summary>Пример настройки паплайна</summary>
+<details><summary>Example of setting up a pipeline</summary>
 <p>
-    
+
 ```python
 IMAGE_PREPROCESSING_PIPELINE = {
     'name': 'image_preprocessing',
-    'description': 'Пайплан предобработки изображений',
+    'description': 'Image preprocessing pipeline',
     'report_csv': 'pipeline_images_preprocessing.csv',
-    'stages': 
+    'stages':
     [
         {
             'name': 'train_face_extraction',
-            'description': 'Извлечение изображений лиц из тренировочного датасета',
-            'platform': 'local', # Выполняется на локальном компьютере
+            'description': 'Extracting face images from the training dataset',
+            'platform': 'local', # Runs on the local computer
             'params': {
-                'path': 'train_faces', # Путь к папке тренировочного датасета с изображениями лиц
-                'engines': 8, # Количество параллельно работающих "движков"
-                'batch_size': 125, # Размер батча
-                'scale_factor': 0.709, # Фактор масштабирования при детектировании лиц на изображении
-                'min_face_size': 128, # Минимальный размер лица при детектировании лиц на изображении
-                'process_csv': 'train_face_extraction_process.csv', # Путь к файлу с детальной информацией
-                'result_csv': 'train_face_extraction.csv', # Путь к файлу с результатами
+                'path': 'train_faces', # Path to the folder of the training dataset with face images
+                'engines': 8, # Number of parallel running "engines"
+                'batch_size': 125, # Batch size
+                'scale_factor': 0.709, # Scaling factor for face detection in an image
+                'min_face_size': 128, # Minimum face size for face detection in an image
+                'process_csv': 'train_face_extraction_process.csv', # Path to the file with detailed information
+                'result_csv': 'train_face_extraction.csv', # Path to the file with results
             },
         },
         {
             'name': 'test_face_extraction',
-            'description': 'Извлечение изображений лиц из тестового датасета',
-            'platform': 'local', # Выполняется на локальном компьютере
+            'description': 'Extracting face images from the test dataset',
+            'platform': 'local', # Executed on the local computer
             'params': {
-                'path': 'test_faces', # Путь к папке тестового датасета с изображениями лиц
-                'engines': 8, # Количество параллельно работающих "движков"
-                'batch_size': 125, # Размер батча
-                'scale_factor': 0.709, # Фактор масштабирования при детектировании лиц на изображении
-                'min_face_size': 128, # Минимальный размер лица при детектировании лиц на изображении
-                'process_csv': 'test_face_extraction_process.csv', # Путь к файлу с детальной информацией
-                'result_csv': 'test_face_extraction.csv', # Путь к файлу с результатами
+                'path': 'test_faces', # Path to the test dataset folder dataset with face images
+                'engines': 8, # Number of parallel running "engines"
+                'batch_size': 125, # Batch size
+                'scale_factor': 0.709, # Scaling factor for face detection in an image
+                'min_face_size': 128, # Minimum face size for face detection in an image
+                'process_csv': 'test_face_extraction_process.csv', # Path to file with detailed information
+                'result_csv': 'test_face_extraction.csv', # Path to file with results
             }
         },
         {
             'name': 'train_cleaning',
-            'description': 'Дополнительная очистка тренировочного датасета',
-            'platform': 'colab', # Выполняется в Google Colab
+            'description': 'Additional cleaning of training dataset',
+            'platform': 'colab', # Performed in Google Colab
             'params': {
-                'path': 'train_clean_faces', # Путь к папке очищенного тренировочного датасета
-                'batch_size': 64, # Размер батча
-                'buffer_size': 10, # Размер буфера
-                'process_csv': 'train_cleaning_process.csv', # Путь к файлу с детальной информацией
-                'result_csv': 'train_cleaning.csv', # Имя файла с результатами
-            },
+                'path': 'train_clean_faces', # Path to the folder of the cleaned training dataset
+                'batch_size': 64, # Batch size
+                'buffer_size': 10, # Buffer size
+                'process_csv': 'train_cleaning_process.csv', # Path to the file with detailed information
+                'result_csv': 'train_cleaning.csv', # Name of the file with results
+            }
         },
     ]
 }
@@ -498,233 +547,233 @@ IMAGE_PREPROCESSING_PIPELINE = {
 </p>
 </details>
 
-#### 2.1. Извлечение изображений лиц из тренировочного датасета (`train_face_extraction`)
+#### 2.1. Extracting face images from the training dataset (`train_face_extraction`)
 
-Данный этап преследует две цели:
-1. Убрать с изображений лишние детали, которые могут "путать" модель, оставив только области лиц.
-2. Исключить из датасета изображения, на которых нет изображений лиц, либо они показаны частично.
+This stage has two goals:
+1. Remove unnecessary details from the images that can "confuse" the model, leaving only the face areas.
+2. Exclude from the dataset images that do not contain faces or that show them partially.
 
-В результате выполнения этапа создается датасет извлеченных изображений лиц, zip-архив которого сохраняется в едином облачном хранилище. Путь к датасету в папке проекта на платформе исполнения и соответственно имя архива датасета в едином облачном хранилище определяется параметром `path` в настройках этапа.
+As a result of this stage, a dataset of extracted face images is created, the zip archive of which is saved in a single cloud storage. The path to the dataset in the project folder on the execution platform and, accordingly, the name of the dataset archive in the single cloud storage are determined by the `path` parameter in the stage settings.
 
-В целях оптимального использования вычислительных ресурсов платформы и сокращения времени выполнения пайплайна все этапы выполняются с использованием механизма параллельных вычислений, реализуемого с помощью пакета [IPython Parallel](https://ipyparallel.readthedocs.io/en/latest/). Количество паралллельных "движков" (англ. *engines*) задается параметром `engines` и должно подбираться, исходя из доступных вычислительных ресурсов платформы исполнения. 
+In order to optimally use the platform's computing resources and reduce the pipeline execution time, all stages are performed using a parallel computing mechanism implemented using the [IPython Parallel](https://ipyparallel.readthedocs.io/en/latest/) package. The number of parallel "engines" (engines) is specified by the `engines` parameter and should be selected based on the available computing resources of the execution platform.
 
-После выполнения этапа необходимо визуально проконтролировать качество полученного датасета изображений лиц. При большом количестве исключенных изображений или, наоборот, если в датасете остались изображения не являющиеся лицами людей, необходимо скорретировать настройки детектора (параметры `scale_factor` и `min_face_size`) и запустить его выполнение повторно.
+After completing the stage, it is necessary to visually check the quality of the resulting dataset of face images. If a large number of images are excluded or, conversely, if the dataset contains images that are not human faces, it is necessary to adjust the detector settings (parameters `scale_factor` and `min_face_size`) and run it again.
 
-<details><summary>Поля csv-файла отчёта о выполнении этапа</summary>
+<details><summary>Fields of the CSV file of the stage execution report</summary>
 <p>
 
 `image_preprocessing/train_face_extraction_process.csv`:
-- `file_path` - относительный путь к файлу исходного датасета;
-- `image_size` - размер изображения (максимальное из значений ширины и высоты);
-- `faces_num` - количество детектированных изображений;
-- `face_size` - размер изображения первого найденного лица (максимальное из значений ширины и высоты);
-- `batch` - порядковый номер батча, в состав которого входит исходное избражения;
-- `iter` - номер итерации обработки батчей
-- `engine` - порядковый номер "движка" кластера, в котором обрабатывается батч
-- `status` - статус выполнения обработки: ok-успешно; error-ошибка
+- `file_path` - relative path to the source dataset file;
+- `image_size` - image size (maximum of width and height);
+- `faces_num` - number of detected images;
+- `face_size` - the size of the first found face image (maximum of the width and height);
+- `batch` - the batch sequence number that includes the original image;
+- `iter` - the batch processing iteration number
+- `engine` - the sequence number of the cluster "engine" in which the batch is processed
+- `status` - the processing execution status: ok-successful; error-error
 
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the CSV file of the stage execution results</summary>
 <p>
 
 `image_preprocessing/train_face_extraction.csv`:
-- `emotion` - название эмоции;
-- `failed_images_number` - количество файлов исходного датасета, на которых не удалось обнаружить изображения лица;
-- `faces_num` - количество изображений лиц с выражением определенной эмоции.
+- `emotion` - the name of the emotion;
+- `failed_images_number` - the number of files in the original dataset where face images could not be found;
+- `faces_num` - the number of face images with an expression of a certain emotion.
 
 </p>
 </details>
 
-#### 2.2. Извлечение изображений лиц из тестового датасета (`test_face_extraction`)
-Целью данного этапа является только извлечение лиц из тестового датасета (отсечение лишней информации). Считается, что тестовые данные оприори корретны, т.е. все изображения содержат полное изображение хотя бы одного лица. Поэтому если на хотя бы одном исходном изображении лицо не обнаружется, то этап считается не выполненным и нужно скорретировать настройки детектора и запустить его выполнение повторно.
+#### 2.2. Extracting face images from the test dataset (`test_face_extraction`)
+The purpose of this stage is only to extract faces from the test dataset (cutting off unnecessary information). It is assumed that the test data is a priori correct, i.e. all images contain a complete image of at least one face. Therefore, if a face is not detected on at least one source image, the stage is considered not completed and it is necessary to adjust the detector settings and run it again.
 
-По аналогии с [предыдущим](#11-%D0%B8%D0%B7%D0%B2%D0%BB%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BB%D0%B8%D1%86-%D0%B8%D0%B7-%D1%82%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0-train_face_extraction) этапом в процессе выполнения этапа формируется архив тестового датасета изображений лиц и csv-файлы отчёта и результатов выполнения этапа.
+Similar to [previous](#11-%D0%B8%D0%B7%D0%B2%D0%BB%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B 8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-%D0%BB%D0%B8%D1%86-%D 0%B8%D0%B7-%D1%82%D1%80%D0%B5%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%BE%D1%87%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B4%D0%B0%D1%82%D0%B0%D1%81%D0%B5%D1%82%D0%B0-train_face_extraction) stage during the execution of the stage, an archive of the test dataset of face images and csv files of the report and results of the stage are formed.
 
-<details><summary>Поля csv-файла отчёта о выполнении этапа</summary>
+<details><summary>Fields of the CSV file of the stage execution report</summary>
 <p>
 
 `image_preprocessing/test_face_extraction_process.csv`:
-- `file_path` - относительный путь к файлу исходного датасета;
-- `image_size` - размер изображения (максимальное из значений ширины и высоты);
-- `faces_num` - количество детектированных изображений;
-- `face_size` - размер изображения первого найденного лица (максимальное из значений ширины и высоты);
-- `batch` - порядковый номер батча, в состав которого входит исходное избражения;
-- `iter` - номер итерации обработки батчей
-- `engine` - порядковый номер "движка" кластера, в котором обрабатывается батч
-- `status` - статус выполнения обработки: ok-
+- `file_path` - relative path to the source dataset file;
+- `image_size` - image size (maximum of width and height);
+- `faces_num` - number of detected images;
+- `face_size` - image size of the first found face (maximum of width and height);
+- `batch` - batch number of the batch that contains the source image;
+- `iter` - batch processing iteration number
+- `engine` - sequence number of the cluster "engine" in which the batch is processed
+- `status` - processing execution status: ok-
 
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
 
 `image_preprocessing/test_face_extraction.csv`:
-- `emotion` - название эмоции;
-- `failed_images_number` - количество файлов исходного датасета, на которых не удалось обнаружить изображение лица;
-- `faces_num` - количество изображений лиц с выражением определенной эмоции.
+- `emotion` - emotion name;
+- `failed_images_number` - number of files of the original dataset where a face image could not be found;
+- `faces_num` - number of face images with a certain emotion.
 
 </p>
 </details>
 
-#### 2.3. Очистка тренировочного датасета (`train_cleaning`)
-Целью данного этапа является исключение из тренивочного датасета изображений лиц объектов, которые могут негативно влиять на качество обучения модели:
-- одинаковых или очень похожих изображений лиц;
-- изображений лиц, которые были возможно ошибочно размечены.
+#### 2.3. Cleaning the training dataset (`train_cleaning`)
+The goal of this stage is to exclude from the training dataset of face images objects that may negatively affect the quality of model training:
+- identical or very similar face images;
+- face images that may have been incorrectly labeled.
 
-Выявление вышеперечисленных изображений лиц производится среди изображений с одинаковой разметкой (внутри класса) на основании анализа векторов их признаков, полученных с помощью базовой модели. Получение векторов признаков осуществляется путем "пропуска" изображений через базовую модель. Далее для каждой пары полученных векторов признаков изображений лиц с одинаковой разметкой вычисляется [косинусное расстояние](https://wiki5.ru/wiki/Cosine_similarity) (мера сходства) между ними.
+The above-mentioned face images are identified among images with the same labeling (within a class) based on the analysis of their feature vectors obtained using the base model. Feature vectors are obtained by "passing" images through the base model. Next, for each pair of obtained feature vectors of face images with the same labeling, the [cosine distance](https://wiki5.ru/wiki/Cosine_similarity) (similarity measure) between them is calculated.
 
-Выявление слишком похожих изображений лиц производится по следующему правилу. К числу таких изображений относятся пары изображений, [косинусное расстояние](https://wiki5.ru/wiki/Cosine_similarity) между которыми превышает верхнюю границу достоверности. Эта граница находится на 1,5 межквартильных размаха выше 3-го квартиля:
+Too similar face images are identified according to the following rule. Such images include pairs of images, the [cosine distance](https://wiki5.ru/wiki/Cosine_similarity) between which exceeds the upper reliability limit. This limit is 1.5 interquartile ranges above the 3rd quartile:
 
-$$\cos(\theta)_{max}=Q_3+1.5\cdot(Q_3-Q_1)$$,  
-где&nbsp; $Q_1$ - 1-ый квартиль распределения [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) между парами векторов признаков изображений лиц с одинаковой  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; разметкой;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Q_3$ - 3-ий квартиль распределения [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) между парами векторов признаков изображений лиц с одинаковой  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; разметкой.
+$$\cos(\theta)_{max}=Q_3+1.5\cdot(Q_3-Q_1)$$,
+where&nbsp; $Q_1$ is the 1st quartile of the distribution of [cosine distances](https://wiki5.ru/wiki/Cosine_similarity) between pairs of feature vectors of face images with the same
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; markup;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Q_3$ is the 3rd quartile of the distribution of [cosine distances](https://wiki5.ru/wiki/Cosine_similarity) between pairs of feature vectors of face images with the same
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;markup.
 
-Для выявления слишком отличающихся изображений лиц дополнительно для каждого изображения вычисляется медианное значение [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) между вектором признаков этого изображения и векторами признаков остальных изображений лиц с такой же разметкой. К слишком отличающимся изображениям относятся те, у которых медианное значение схожести с другими изображениями выходит за нижнюю границу достоверности, расположенную на 1,5 межквартильных размаха ниже 1-го квартиля:
+To identify too different face images, the median value of [cosine distances](https://wiki5.ru/wiki/Cosine_similarity) between the feature vector of this image and the feature vectors of the other face images with the same markup is additionally calculated for each image. Images that are too dissimilar are those whose median similarity value with other images falls outside the lower confidence limit, which is 1.5 interquartile ranges below the 1st quartile:
 
 $$Me_{min}=Q_1-1.5\cdot(Q_3-Q_1),$$
-где&nbsp; $Q_1$ - 1-ый квартиль распределения медианных значений [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) между вектором признаков изображения лица и &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; векторами признаков изображений остальных лиц с одинаковой разметкой;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Q_3$ - 3-ий квартиль распределения медианных значений [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) между вектором признаков изображения лица и &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; векторами признаков изображений остальных лиц с одинаковой разметкой.
+where&nbsp; $Q_1$ is the 1st quartile of the distribution of median values ​​[cosine distances](https://wiki5.ru/wiki/Cosine_similarity) between the feature vector of the face image and the feature vectors of the other faces with the same markup;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $Q_3$ - 3rd quartile of the distribution of median values ​​of [cosine distances](https://wiki5.ru/wiki/Cosine_similarity) between the face image feature vector and &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;feature vectors of other faces with the same markup.
 
-<details><summary>Поля csv-файла отчёта о выполнении этапа</summary>
+<details><summary>Fields of the CSV file of the stage completion report</summary>
 <p>
 
 `image_preprocessing/train_cleaning_process.csv`:
-- `file_path` - относительный путь к файлу в датасете изображений лиц;
-- `similarity_max` - верхняя граница статистически значимой выборки [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) между векторами признаков изображений;
-- `similarity` - список значений [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) вектора признаков относительно других векторов, выходящих за верхнюю границу статистически значимой выборки;
-- `similar_to` - список относительных путей к файлам изображений лиц, с которыми выявлена излишняя схожесть;
-- `similarity_median_min` - нижняя граница статистически значимой выборки медианных значений [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) между вектором признаков изображений и векторами признаков остальных изображений;
-- `similarity_median` - медианное значение [косинусных расстояний](https://wiki5.ru/wiki/Cosine_similarity) между вектором признаков изображения и векторами признаков изображений остальных лиц, выражающих такую же эмоцию.
+- `file_path` - relative path to the file in the face image dataset;
+- `similarity_max` - upper limit of the statistically significant sample of [cosine distances](https://wiki5.ru/wiki/Cosine_similarity) between the image feature vectors;
+- `similarity` - a list of values ​​of [cosine distances](https://wiki5.ru/wiki/Cosine_similarity) of the feature vector relative to other vectors that are beyond the upper limit of the statistically significant sample;
+- `similar_to` - a list of relative paths to the face image files with which excessive similarity was detected;
+- `similarity_median_min` - the lower limit of the statistically significant sample of median values ​​of [cosine distances](https://wiki5.ru/wiki/Cosine_similarity) between the feature vector of images and the feature vectors of the remaining images;
+- `similarity_median` - the median value of [cosine distances](https://wiki5.ru/wiki/Cosine_similarity) between the feature vector of an image and the feature vectors of the remaining faces expressing the same emotion.
 
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
 
 `image_preprocessing/train_cleaning.csv`:
-- `emotion` - название эмоции;
-- `failed_faces_number` - количество отбракованных изображений лиц;
-- `faces_num` - оставшееся количество изображений лиц.
+- `emotion` - the name of the emotion;
+- `failed_faces_number` - the number of rejected face images;
+- `faces_num` - the remaining number of face images.
 
 </p>
 </details>
 
-### 3. Создание модели (`MODEL_BUILDING_PIPELINE`)
+### 3. Creating a model (`MODEL_BUILDING_PIPELINE`)
 
-<details><summary>Пример настройки паплайна</summary>
+<details><summary>Example of setting up a pipeline</summary>
 <p>
-    
+
 ```python
 MODEL_BUILDING_PIPELINE = {
-    'name': 'model_building',
-    'description': 'Пайплайн создания модели',
-    'report_csv': 'pipeline_model_building.csv',
-    'stages': [
+'name': 'model_building',
+'description': 'Model building pipeline',
+'report_csv': 'pipeline_model_building.csv',
+'stages': [
         {
             'name': 'train_feature_extraction',
-            'description': 'Извлечение признаков из тренировочного датасета',
-            'platform': 'colab', # Выполняется в Google Colab
+            'description': 'Extracting features from the training dataset',
+            'platform': 'colab', # Performed in Google Colab
             'params': {
-                'path': 'train_features', # Путь к папке с файлами батчей извлеченных признаков
-                'flip': RANDOM_FLIP, # Случайное отрезкаливание изображения
-                'rotation_factor': RANDOM_ROTATION_FACTOR, # Фактор случайного поворота (против или по часой стрелке) изображения при аугментации, доли от 360°
-                'zoom_factor': RANDOM_ZOOM, # Фактор случайного приближения или удаления изображения при аугментации
-                'contrast_factor': RANDOM_CONTRACT_FACTOR, # Фактор случаного изменения контраста изображения
-                'brightness_factor': RANDOM_BRIGHTNESS_FACTOR, # Фактор случаного изменения яркости изображения
-                'batch_size': 64, # Размер батча
-                'buffer_size': 10, # Размер буфера
+                'path': 'train_features', # Path to the folder with the extracted feature batch files
+                'flip': RANDOM_FLIP, # Random image cropping
+                'rotation_factor': RANDOM_ROTATION_FACTOR, # Factor of random rotation (counter-clockwise or clockwise) of the image when augmentations, fractions of 360°
+                'zoom_factor': RANDOM_ZOOM, # Factor of random zooming in or out of an image during augmentation
+                'contrast_factor': RANDOM_CONTRACT_FACTOR, # Factor of random change of image contrast
+                'brightness_factor': RANDOM_BRIGHTNESS_FACTOR, # Factor of random change of image brightness
+                'batch_size': 64, # Batch size
+                'buffer_size': 10, # Buffer size
             }
         },
         {
             'name': 'test_feature_extraction',
-            'description': 'Извлечение признаков из тестового датасета',
-            'platform': 'colab', # Выполняется в Google Colab
+            'description': 'Extracting features from a test dataset',
+            'platform': 'colab', # Performed in Google Colab
             'params': {
-                'path': 'test_features', # Путь к папке с файлами батчей извлеченных признаков
-                'flip': RANDOM_FLIP, # Случайное отрезкаливание изображения
-                'rotation_factor': RANDOM_ROTATION_FACTOR, # Фактор случайного поворота (против или по часой стрелке) изображения при аугментации, доли от 360°
-                'zoom_factor': RANDOM_ZOOM, # Фактор случайного приближения или удаления изображения при аугментации
-                'contrast_factor': RANDOM_CONTRACT_FACTOR, # Фактор случаного изменения контраста изображения
-                'brightness_factor': RANDOM_BRIGHTNESS_FACTOR, # Фактор случаного изменения яркости изображения
-                'batch_size': 64, # Размер батча
-                'buffer_size': 10, # Размер буфера
+                'path': 'test_features', # Path to the folder with the extracted feature batch files
+                'flip': RANDOM_FLIP, # Random image cropping
+                'rotation_factor': RANDOM_ROTATION_FACTOR, # Factor of random rotation (counter-clockwise or clockwise) of the image during augmentation, fraction of 360°
+                'zoom_factor': RANDOM_ZOOM, # Factor of random zooming in or out of the image during augmentation
+                'contrast_factor': RANDOM_CONTRACT_FACTOR, # Factor of random change in image contrast
+                'brightness_factor': RANDOM_BRIGHTNESS_FACTOR, # Factor of random change of image brightness
+                'batch_size': 64, # Batch size
+                'buffer_size': 10, # Buffer size
             }
         },
         {
             'name': 'model_on_top_selection',
-            'description': 'Выбор лучшей полносвязной модели',
-            'platform': 'colab', # Выполняется в Google Colab
+            'description': 'Selecting the best fully connected model',
+            'platform': 'colab', # Executed in Google Colab
             'params': {
-                'path': 'model_on_top_selection', # Путь к папке с логами и весами полносвязной модели
-                'batch_size': 64, # Размер батча
-                'optimizer_name': OPTIMIZER, # Оптимизатор,
-                'initial_learning_rate': MODEL_ON_TOP_INITIAL_LEARNING_RATE, # Начальная скорость обучения
-                'learning_rate_decay_rate': MODEL_ON_TOP_LEARNING_RATE_DECAY_RATE, # Коэффициент снижения скорости обучения
-                'epochs': 100, # Количество эпох при измерении времени инференса
-                'patience': 10, # Макс. количество эпох без улучшения точности
-                'process_csv': 'model_on_top_selection.csv', # Путь с результатами обучения моделей
-                'result_csv': 'selected_model_on_top.csv', # Путь к файлу с описанием выбранной базовой модели
+                'path': 'model_on_top_selection', # Path to the folder with logs and weights of the fully connected model
+                'batch_size': 64, # Batch size
+                'optimizer_name': OPTIMIZER, # Optimizer,
+                'initial_learning_rate': MODEL_ON_TOP_INITIAL_LEARNING_RATE, # Initial learning rate
+                'learning_rate_decay_rate': MODEL_ON_TOP_LEARNING_RATE_DECAY_RATE, # Learning rate decay rate
+                'epochs': 100, # Number of epochs when measuring inference time
+                'patience': 10, # Max. number of epochs without accuracy improvement
+                'process_csv': 'model_on_top_selection.csv', # Path with model training results
+                'result_csv': 'selected_model_on_top.csv', # Path to the file with the description of the selected base model
             }
         },
         {
             'name': 'model_on_top_training',
-            'description': 'Обучение полносвязных моделей',
-            'platform': 'colab', # Выполняется в Google Colab
+            'description': 'Training fully connected models',
+            'platform': 'colab', # Runs in Google Colab
             'params': {
-                'path': 'model_on_top_training', # Путь к папке с логами и весами полносвязной модели
-                'flip': RANDOM_FLIP, # Случайное отрезкаливание изображения
-                'rotation_factor': RANDOM_ROTATION_FACTOR, # Фактор случайного поворота (против или по часой стрелке) изображения при аугментации, доли от 360°
-                'zoom_factor': RANDOM_ZOOM, # Фактор случайного приближения или удаления изображения при аугментации
-                'contrast_factor': RANDOM_CONTRACT_FACTOR, # Фактор случаного изменения контраста изображения
-                'brightness_factor': RANDOM_BRIGHTNESS_FACTOR, # Фактор случаного изменения яркости изображения
-                'batch_size': 32, # Размер батча
-                'buffer_size': 100, # Размер буфера
-                'optimizer_name': OPTIMIZER, # Оптимизатор,
-                'initial_learning_rate': MODEL_ON_TOP_INITIAL_LEARNING_RATE, # Начальная скорость обучения
-                'learning_rate_decay_rate': MODEL_ON_TOP_LEARNING_RATE_DECAY_RATE, # Коэффициент снижения скорости обучения
-                'epochs': 2, # Количество эпох при измерении времени инференса
-                'epochs_per_run': 2, # Количество эпох обучения за один запуск
-                'patience': 1, # Макс. количество эпох без улучшения точности
-                'process_csv': 'model_on_top_training.csv', # Путь с результатами обучения полносвязной
-                'result_csv': 'trained_model_on_top.csv', # Путь к файлу с оценкой полносвязной модели
+                'path': 'model_on_top_training', # Path to the folder with logs and weights of the fully connected model
+                'flip': RANDOM_FLIP, # Random image cropping
+                'rotation_factor': RANDOM_ROTATION_FACTOR, # Factor of random rotation (counter-clockwise or clockwise) of the image during augmentation, fraction of 360°
+                'zoom_factor': RANDOM_ZOOM, # Factor of random zooming in or out of the image during augmentation
+                'contrast_factor': RANDOM_CONTRACT_FACTOR, # Factor of random change in image contrast
+                'brightness_factor': RANDOM_BRIGHTNESS_FACTOR, # Factor of random change of image brightness
+                'batch_size': 32, # Batch size
+                'buffer_size': 100, # Buffer size
+                'optimizer_name': OPTIMIZER, # Optimizer,
+                'initial_learning_rate': MODEL_ON_TOP_INITIAL_LEARNING_RATE, # Initial learning rate
+                'learning_rate_decay_rate': MODEL_ON_TOP_LEARNING_RATE_DECAY_RATE, # Learning rate decay factor
+                'epochs': 2, # Number of epochs when measuring inference time
+                'epochs_per_run': 2, # Number of training epochs per run
+                'patience': 1, # Max. number of epochs without accuracy improvement
+                'process_csv': 'model_on_top_training.csv', # Path with fully connected model training results
+                'result_csv': 'trained_model_on_top.csv', # Path to the file with the fully connected model evaluation
             }
         },
         {
             'name': 'model_fine_tuning',
-            'description': 'Тонкая настройка модели',
-            'platform': 'colab', # Выполняется в Google Colab
+            'description': 'Model fine tuning',
+            'platform': 'colab', # Performed in Google Colab
             'params': {
-                'path': 'model_fine_tuning', # Путь к папке с логами и весами полносвязной модели
-                'batch_size': 32, # Размер батча
-                'buffer_size': 100, # Размер буфера
-                'optimizer_name': OPTIMIZER, # Оптимизатор
-                'initial_learning_rate': MODEL_INITIAL_LEARNING_RATE, # Начальная скорость обучения
-                'learning_rate_decay_rate': MODEL_LEARNING_RATE_DECAY_RATE, # Коэффициент снижения скорости обучения
-                'epochs': 50, # Количество эпох обучения
-                'epochs_per_run': 10, # Количество эпох обучения за один запуск
-                'patience': 10, # Макс. количество эпох без улучшения точности
-                'process_csv': 'model_fine_tuning.csv', # Путь к файлу с данными процесса тонкой настройки модели
-                'result_csv': 'model.csv', # Путь к файлу с оценкой результирующей модели
+                'path': 'model_fine_tuning', # Path to the folder with the fully connected model logs and weights
+                'batch_size': 32, # Batch size
+                'buffer_size': 100, # Buffer size
+                'optimizer_name': OPTIMIZER, # Optimizer
+                'initial_learning_rate': MODEL_INITIAL_LEARNING_RATE, # Initial learning rate
+                'learning_rate_decay_rate': MODEL_LEARNING_RATE_DECAY_RATE, # Learning rate decay rate
+                'epochs': 50, # Number of training epochs
+                'epochs_per_run': 10, # Number of training epochs per run
+                'patience': 10, # Max. number of epochs without accuracy improvement
+                'process_csv': 'model_fine_tuning.csv', # Path to the file with the model fine-tuning process data
+                'result_csv': 'model.csv', # Path to the file with the evaluation of the resulting model
             }
         },
         {
             'name': 'model_deploy_test',
-            'description': 'Тестирование работы модели',
-            'platform': 'local', # Выполняется на локальном компьютере
+            'description': 'Testing the model',
+            'platform': 'local', # Executed on the local computer
             'params': {
                 'path': 'model_deploy_test',
-                'scale_factor': 0.209, # Фактор масштабирования при детектировании лиц на изображении
-                'min_face_size': 128, # Минимальный размер лица при детектировании лиц на изображении
-                'min_probability': 0.5, # Минимальная вероятность предсказания эмоции
-                # 'max_error': 0.25, # Максимальная ошибка предсказания valence-arousal
-                'process_csv': 'model_deploy_test.csv', # Путь к файлу с данными процесса выбора базовой модели
-                'result_csv': 'emotion_files.csv', # Путь к файлу с описанием файлов полученных изображений эмоций
+                'scale_factor': 0.209, # Scaling factor for detecting faces in an image
+                'min_face_size': 128, # Minimum face size for detecting faces in an image
+                'min_probability': 0.5, # Minimum probability of emotion prediction
+                # 'max_error': 0.25, # Maximum error of valence-arousal prediction
+                'process_csv': 'model_deploy_test.csv', # Path to the file with data of the base model selection process
+                'result_csv': 'emotion_files.csv', # Path to the file with description of files of received emotion images
             }
         },
     ]
@@ -734,73 +783,71 @@ MODEL_BUILDING_PIPELINE = {
 </p>
 </details>
 
-#### 3.1. Извлечение признаков из тренировочного датасета (`train_feature_extraction`)
-Целью данного этапа является получение датасета из векторов признаков изображений лиц тренировочного датасета. Этот датасет используется на этапе [выбора лучшей полносвязной модели](#33-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%B9-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D0%B9-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-model_on_top_selection). Извлечение признаков производится путем "пропуска" изображений лиц через базовую модель.  
-Изображения подаются в модель порциями (англ. *batch*). Размер порции опередяется настроечным параметром `batch_size`. Для увеличения скорости выполнения обработки изображения предварительно подгружаются в буфер (англ. *buffer*), размер которого задается с помощью параметра `buffer_size`.  
-Полученные вектора признаков упаковываются в numpy-массив, который сохраняется в файл с именем, заданным в настроечном параметре `path`, и расширением `npz`. Zip-архив данного файла копируется в папку проекта в едином облачном хранилище.
+#### 3.1. Extracting features from the training dataset (`train_feature_extraction`)
+The goal of this step is to obtain a dataset from the feature vectors of the training dataset's facial images. This dataset is used in the [best fully connected model selection](#33-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%BB%D1%83%D1%87%D1%88%D0%B5%D0%B9-%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D1%81%D0%B2%D1%8F%D0%B7%D0%BD%D0%BE%D0%B9-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%B8-model_on_top_selection) stage. Features are extracted by "passing" face images through the base model.
+Images are fed to the model in batches. The batch size is specified by the `batch_size` parameter. To increase the speed of processing, images are pre-loaded into a buffer (English *buffer*), the size of which is specified using the `buffer_size` parameter.
+The resulting feature vectors are packed into a numpy array, which is saved to a file with the name specified in the `path` parameter and the `npz` extension. The zip archive of this file is copied to the project folder in a single cloud storage.
 
-#### 3.2. Извлечение признаков из тестового датасета (`test_feature_extraction`)
-Целью данного этапа является получение датасета из векторов признаков изображений лиц тестового датасета. Этот датасет также используется на этапе выбора лучшей полносвязной модели. Данный этап выполняется аналогично предыдущему и имеет такой же набор настроечных параметров.
+#### 3.2. Extracting features from the test dataset (`test_feature_extraction`)
+The goal of this step is to obtain a dataset from the feature vectors of the test dataset faces. This dataset is also used in the step of selecting the best fully connected model. This step is performed similarly to the previous one and has the same set of tuning parameters.
 
-#### 3.3. Выбор лучшей верхней модели (`model_on_top_selection`)
-Целью данного этапа является определение конфигурации верхней модели, имеющей наилучший потенциал для применения в составе результирующей модели. Для выявления такой конфигурации производится обучение верхних моделей со всевозможными сочетаниями вариантов количества блоков слоев исключения и полносвязных слоев, вариантов количества выходных нейронов в полносвязных слоях, а также вариантами величин долей обнуляемых нейронов в слоях исключения. Обучение верхних моделей производится на тренировочном датасете признаков изображений лиц. 
+#### 3.3. Selecting the best top model (`model_on_top_selection`)
+The goal of this stage is to determine the top model configuration that has the best potential for use in the resulting model. To identify such a configuration, top models are trained with all possible combinations of options for the number of dropout layer blocks and fully connected layers, options for the number of output neurons in fully connected layers, as well as options for the values ​​of the proportion of zeroed neurons in dropout layers. Top models are trained on a training dataset of face image features.
 
-Обучение моделей производится до тех пор пока наблюдается рост точности их предсказаний на тестовом датасете признаков изображений лиц. Проверка точности осуществляется на платформе [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data). В процессе обучения его скорость снижается каждую эпоху по экспоненциальной траектории, определяемой начальным значением, задаваемым параметром параметром `initial_learning_rate`, и коэффициентом снижения, задаваемым параметром `initial_learning_rate`.
+Models are trained until an increase in the accuracy of their predictions is observed on the test dataset of face image features. Accuracy is checked on the [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data) platform. During the training process, its speed decreases every epoch along an exponential trajectory determined by the initial value specified by the `initial_learning_rate` parameter and the decay factor specified by the `initial_learning_rate` parameter.
 
-Данные процесса обучения моделей сохраняются в папке с именем, заданным в настроечном параметре `path`. Во вложенную папку `logs` сохраняются файлы истории изменения метрик обучения:
-- `learning rate` - скорость обучения в течение следующей эпохи обучения;
-- `loss` - значение функции потерь в конце эпохи обучения;
-- `sparse_categorical_accuracy` - точность предсказаний на тренировочном датасете в конце эпохи обучения;
-- `test_public_score` - точность предсказания модели на публичной части тестового датасета;
-- `test_private_score` - точность предсказания модели на приватной части тестового датасета;
-- `test_score` - средняя точность предсказания модели на тестовом датасета.
+The data from the model training process is saved in the folder with the name specified in the `path` configuration parameter. The `logs` subfolder contains the history files of the training metrics:
+- `learning rate` - the learning rate during the next training epoch;
+- `loss` - the value of the loss function at the end of the training epoch;
+- `sparse_categorical_accuracy` - the accuracy of predictions on the training dataset at the end of the training epoch;
+- `test_public_score` - the accuracy of predictions of the model on the public part of the test dataset;
+- `test_private_score` - the accuracy of predictions of the model on the private part of the test dataset;
+- `test_score` - the average accuracy of predictions of the model on the test dataset.
 
-По окончания обучения каждой модели её файл с "лучшими" весами (веса, с которыми модель показала лучшую точность) сохраняется во вложенной `models`.
+At the end of training each model, its file with the "best" weights (weights with which the model showed the best accuracy) is saved in the nested `models`.
 
-Визуализация процесса обучения осуществляется на встроенной в ноутбук интерактивной панели [TensorBoard](https://www.tensorflow.org/tensorboard). 
+The training process is visualized on the interactive panel [TensorBoard](https://www.tensorflow.org/tensorboard) built into the notebook.
 
-В качестве лучшей верхней модели выбрается та модель, которая показала самое большое лучшее значение точности предсказаний на тестовом датасете.
+The model that showed the highest best value of prediction accuracy on the test dataset is selected as the best top model.
 
-По завершении этапа содержимое папки данных копируется в виде одноименного zip-архива в папку проекта в едином облачном хранилище.
+At the end of the stage, the contents of the data folder are copied as a zip archive of the same name to the project folder in a single cloud storage.
 
-<details><summary>Поля csv-файла детальной информации о выполнении этапа</summary>
+<details><summary>Fields of the detailed information csv file about the stage execution</summary>
 <p>
 
 `model_building/model_on_top_selection.csv`:
-- `model_on_top_config` - конфигурация блоков слоев исключения и полносвязных слоёв верхней модели в формате:  
-  (`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),  
-где&nbsp;`n` - количество блоков из списка, заданного параметром `MODEL_ON_TOP_DENSE_NUMS`;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - доля обнуляемых при обучении входных нейронов полносвязного слоя в i-ом блоке из списка, &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; заданного параметром `MODEL_ON_TOP_DROPOUT_RATES`;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - количество выходных нейронов полносвязного слоя в i-ом блоке из списка, заданного параметром &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL_ON_TOP_DENSE_UNITS`;  
-- `best_epoch` - номер эпохи обучения, в конце которой была показана лучшая точность предсказаний на тестовом датасете;
-- `loss_at_best_epoch` - значения фукнции потерь в конце эпохи обучения, в конце которой была показана лучшая точность предсказаний на тестовом датасете;
-- `sparse_categorical_accuracy_at_best_epoch` - значение точности на тренировочном датасете в конце эпохи обучения, в конце которой была показана лучшая точность предсказаний на тестовом датасете;
-- `best_test_score` - лучшее значение точности предсказаний на тестовом датасете.
+- `model_on_top_config` - configuration of the dropout layer blocks and the fully connected layers of the top model in the format:
+(`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),
+where&nbsp;`n` is the number of blocks from the list specified by the `MODEL_ON_TOP_DENSE_NUMS` parameter;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - the proportion of input neurons of the fully connected layer in the i-th block from the list, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; specified by the `MODEL_ON_TOP_DROPOUT_RATES` parameter, that are reset during training; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - the number of output neurons of the fully connected layer in the i-th block from the list specified by the parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL_ON_TOP_DENSE_UNITS`;
+- `best_epoch` - the number of the training epoch at the end of which the best prediction accuracy was shown on the test dataset;
+- `loss_at_best_epoch` - the value of the loss function at the end of the training epoch at the end of which the best prediction accuracy was shown on the test dataset;
+- `sparse_categorical_accuracy_at_best_epoch` - the accuracy value on the training dataset at the end of the training epoch at the end of which the best prediction accuracy was shown on the test dataset;
+- `best_test_score` - the best prediction accuracy value on the test dataset.
 
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
 
 `model_building/selected_model_on_top.csv`:
-- `model_on_top_config` - конфигурация блоков слоев исключения и полносвязных слоёв, выбранной верхней модели в формате:  
-  (`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),  
-где&nbsp;`n` - количество блоков из списка, заданного параметром `MODEL_ON_TOP_DENSE_NUMS`;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - доля обнуляемых при обучении входных нейронов полносвязного слоя в i-ом блоке из списка, &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; заданного параметром `MODEL_ON_TOP_DROPOUT_RATES`;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - количество выходных нейронов полносвязного слоя в i-ом блоке из списка, заданного параметром &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL_ON_TOP_DENSE_UNITS`;  
-- `best_test_score` - лучшее значение точности предсказаний на тестовом датасете выбранной верхней модели.
+- `model_on_top_config` - configuration of the units of the dropout and fully connected layers of the selected top model in the format:
+(`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),
+where&nbsp;`n` is the number of units from the list specified by the `MODEL_ON_TOP_DENSE_NUMS` parameter;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - the proportion of input neurons of the fully connected layer in the i-th block from the list, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; specified by the `MODEL_ON_TOP_DROPOUT_RATES` parameter, that are reset during training; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - the number of output neurons of the fully connected layer in the i-th block from the list specified by the parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL_ON_TOP_DENSE_UNITS`;
+- `best_test_score` - the best value of prediction accuracy on the test dataset of the selected upper model.
 
 </p>
 </details>
 
-<details><summary>Пример графиков обучения модели</summary>
+<details><summary>Example of model training graphs</summary>
     <p align="center" style="text-align:center">
         <table>
             <tr>
                 <td>
                     <p align="center"><b>learning rate</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170698-ac024401-65f8-4583-ae99-cbbf797ec7e1.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170698-ac024401-65f8-4583-ae99-cbbf797ec7e1.svg>
                 </td>
                 <td>
                     <p align="center"><b>train loss</b></p>
@@ -814,7 +861,7 @@ MODEL_BUILDING_PIPELINE = {
             <tr>
                 <td>
                     <p align="center"><b>test public score</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170696-372b2f6f-8cde-4d56-b39a-db42b02fd6f0.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170696-372b2f6f-8cde-4d56-b39a-db42b02fd6f0.svg>
                 </td>
                 <td>
                     <p align="center"><b>test private score</b></p>
@@ -829,66 +876,65 @@ MODEL_BUILDING_PIPELINE = {
     </p>
 </details>
 
-#### 3.4. Обучение полносвязной модели (`model_on_top_training`)
-На данном этапе производится обучение верхней модели. Целью такого обучения в первую очередь является снижение вероятности возникновения слишком большой величины градиента при обучении модели целиком, которая может привести к "разрушению" базовой модели. Но с другой стороны слишком длительное обучение только верхней модели может осложнить последующее обучение модели целиком. Поэтому рекомендуется обучать полносвязную модель только в течение нескольких эпох. Максимальное количество эпох обучения определяется параметром `epochs`. Однако, обучение может закончиться раньше, если точность предсказаний модели на тестовых данных перестанет расти (не увеличится в течение определенного количества эпох, заданного параметром `patience`).
+#### 3.4. Training a fully connected model (`model_on_top_training`)
+At this stage, the top model is trained. The purpose of such training is primarily to reduce the likelihood of an excessively large gradient during training of the entire model, which can lead to the "destruction" of the base model. But on the other hand, training only the top model for too long can complicate subsequent training of the entire model. Therefore, it is recommended to train a fully connected model only for a few epochs. The maximum number of training epochs is determined by the `epochs` parameter. However, training may end earlier if the accuracy of the model's predictions on test data stops growing (does not increase over a certain number of epochs specified by the `patience` parameter).
 
-Для увеличения разнообразия обучающих данных тренировочные изображения лиц предварительно случайным образом преобразуются с помощью модели аугментации.
+To increase the diversity of training data, training face images are preliminarily randomly transformed using an augmentation model.
 
-При обучении можно использовать любой оптимайзер из библиотеки [Keras](https://keras.io/api/optimizers/#available-optimizers). Имя оптимайзера должно быть указано в параметре `optimizer_name`. В процессе обучения его скорость снижается каждую эпоху по экспоненциальной траектории, определяемой начальным значением, заданным параметром параметром `initial_learning_rate` и коэффициентом снижения, заданным параметром `initial_learning_rate`.
+Any optimizer from the [Keras](https://keras.io/api/optimizers/#available-optimizers) library can be used for training. The optimizer name must be specified in the `optimizer_name` parameter. During training, its speed is reduced every epoch along an exponential trajectory determined by the initial value specified by the `initial_learning_rate` parameter and the reduction factor specified by the `initial_learning_rate` parameter.
 
-Обучение произволится порциями (англ. *batch*). Размер порции опередяется настроечным параметром `batch_size`. Для увеличения скорости выполнения обработки тренировочные изображения лиц предварительно подгружаются в буфер (англ. *buffer*), размер которого задается с помощью параметра `buffer_size`. 
+Training is performed in batches. The batch size is determined by the `batch_size` parameter. To increase the speed of processing, training face images are pre-loaded into a buffer, the size of which is specified by the `buffer_size` parameter.
 
-Данные процесса обучения сохраняются в папке с именем, заданным настроечным параметром `path`. Во вложенную папку `logs` сохраняются файлы истории метрик обучения:
-- `learning rate` - скорость обучения в течение следующей эпохи обучения;
-- `loss` - значение функции потерь в конце эпохи обучения;
-- `sparse_categorical_accuracy` - точность предсказаний на тренировочном датасете изображений лиц в конце эпохи обучения;
-- `test_public_score` - точность предсказания модели на публичной части тестового датасета изображений лиц;
-- `test_private_score` - точность предсказания модели на приватной части тестового датасета изображений лиц;
-- `test_score` - средняя точность предсказания модели на тестовом датасета изображений лиц.
+Training data is saved in a folder named by the `path` parameter. The `logs` subfolder contains training metrics history files:
+- `learning rate` - the learning rate during the next training epoch;
+- `loss` - the value of the loss function at the end of the training epoch;
+- `sparse_categorical_accuracy` - the accuracy of predictions on the training dataset of face images at the end of the training epoch;
+- `test_public_score` - the accuracy of the model's prediction on the public part of the test dataset of face images;
+- `test_private_score` - the accuracy of the model's prediction on the private part of the test dataset of face images;
+- `test_score` - the average accuracy of the model's prediction on the test dataset of face images.
 
-Этап может быть разделен на несколько итераций, количество которых определяется параметром `epochs_per_run`. В конце каждой итерации или в момент остановки обучения модель с последними и "лучшими" весами (веса, с которыми модель показала лучшую точность) сохраняются во вложенной `models`. В начале следующей итерации модель не создается заново, а загружается из файла с последними веса предыдущей итерации.
+The stage can be divided into several iterations, the number of which is determined by the `epochs_per_run` parameter. At the end of each iteration or when training stops, the model with the latest and "best" weights (weights with which the model showed the best accuracy) are saved in the `models` nested folder. At the beginning of the next iteration, the model is not created anew, but is loaded from a file with the latest weights of the previous iteration.
 
-Визуализация процесса обучения осуществляется на встроенной в ноутбук интерактивной панели [TensorBoard](https://www.tensorflow.org/tensorboard).
+The training process is visualized on the interactive panel [TensorBoard](https://www.tensorflow.org/tensorboard) built into the notebook.
 
-По завершении этапа содержимое папки данных копируется в виде одноименного zip-архива в папку проекта в едином облачном хранилище.
+Once the stage is completed, the contents of the data folder are copied as a zip archive of the same name to the project folder in a single cloud storage.
 
-<details><summary>Поля csv-файла отчёта о выполнении этапа</summary>
+<details><summary>Fields of the stage execution report csv file</summary>
 <p>
 
 `model_building/model_on_top_training.csv`:
-- `epoch` - номер эпохи обучения;
-- `loss` - значение функции потерь в конце эпохи обучения;
-- `sparse_categorical_accuracy` - точность предсказаний на тренировочном датасете изображений лиц в конце эпохи обучения;
-- `lr` - скорость обучения в течение следующей эпохи обучения;
-- `test_public_score` - точность предсказания модели на публичной части тестового датасета изображений лиц;
-- `test_private_score` - точность предсказания модели на приватной части тестового датасета изображений лиц;
-- `test_score` - средняя точность предсказания модели на тестовом датасета изображений лиц.
+- `epoch` - training epoch number;
+- `loss` - loss function value at the end of the training epoch;
+- `sparse_categorical_accuracy` - prediction accuracy on the training face dataset at the end of the training epoch;
+- `lr` - learning rate during the next training epoch;
+- `test_public_score` - model prediction accuracy on the public part of the test face dataset;
+- `test_private_score` - model prediction accuracy on the private part of the test face dataset;
+- `test_score` - average prediction accuracy on the test face dataset.
 
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
-    
+
 `model_building/trained_model_on_top.csv`
-- `base_model_name` - название базовой модели;
-- `model_on_top_config` - конфигурация блоков слоев исключения и полносвязных слоёв верхней модели в формате:  
-  (`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),  
-где&nbsp;`n` - количество блоков из списка, заданного параметром `MODEL_ON_TOP_DENSE_NUMS`;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - доля обнуляемых при обучении входных нейронов полносвязного слоя в i-ом блоке из списка, &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; заданного параметром `MODEL_ON_TOP_DROPOUT_RATES`;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - количество выходных нейронов полносвязного слоя в i-ом блоке из списка, заданного параметром &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL_ON_TOP_DENSE_UNITS`;  
-- `best_test_score` - лучшее значение точности предсказаний модели на тестовом датасете.
+- `base_model_name` - the name of the base model;
+- `model_on_top_config` - configuration of the units of the dropout layers and fully connected layers of the top model in the format:
+(`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),
+where&nbsp;`n` is the number of units from the list specified by the `MODEL_ON_TOP_DENSE_NUMS` parameter;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - the proportion of input neurons of the fully connected layer in the i-th block from the list, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; specified by the `MODEL_ON_TOP_DROPOUT_RATES` parameter, that are reset during training; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - the number of output neurons of the fully connected layer in the i-th block from the list specified by the parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL_ON_TOP_DENSE_UNITS`;
+- `best_test_score` - the best value of the model's prediction accuracy on the test dataset.
 
 </p>
 </details>
 
-<details><summary>Пример графиков обучения модели</summary>
+<details><summary>Example of model training graphs</summary>
     <p align="center" style="text-align:center">
         <table>
             <tr>
                 <td>
                     <p align="center"><b>learning rate</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170501-a44927a4-a898-4ef9-b5ec-3418a5bf8ebd.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170501-a44927a4-a898-4ef9-b5ec-3418a5bf8ebd.svg>
                 </td>
                 <td>
                     <p align="center"><b>train loss</b></p>
@@ -902,7 +948,7 @@ MODEL_BUILDING_PIPELINE = {
             <tr>
                 <td>
                     <p align="center"><b>test public score</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170477-0dcea241-f0a0-4f54-a999-e9b049145032.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200170477-0dcea241-f0a0-4f54-a999-e9b049145032.svg>
                 </td>
                 <td>
                     <p align="center"><b>test private score</b></p>
@@ -917,49 +963,48 @@ MODEL_BUILDING_PIPELINE = {
     </p>
 </details>
 
-#### 3.5. Тонкая настройка модели (`model_fine_tuning`)
+#### 3.5. Model fine-tuning (`model_fine_tuning`)
 
-Тонкая настройка модели является завершающим этапом обучения модели. В процессе выполнения данного этапа производится одновременное обучение как верхней, так и базовой модели. В начале этапа модель загружается из файла с "лучшими" весами, полученными на предыдщем этапе. В остальном процесс выполнения данного этапа похож на предыдущий и также визуализируется с помощью встроенной интерактивной панели [TensorBoard](https://www.tensorflow.org/tensorboard). Этап имеет такие же настроечные параметры. 
+Model fine-tuning is the final stage of model training. During this stage, both the upper and base models are trained simultaneously. At the beginning of the stage, the model is loaded from a file with the "best" weights obtained in the previous stage. Otherwise, the process of performing this stage is similar to the previous one and is also visualized using the built-in interactive panel [TensorBoard](https://www.tensorflow.org/tensorboard). The stage has the same tuning parameters.
 
-По окончании обучения содержимое папки данных (файлы истории изменения метрик и файлы последней и "лучшей" модели) копируется в виде одноименного zip-архива в папку проекта в едином облачном хранилище.
+After training is complete, the contents of the data folder (metric change history files and the latest and "best" model files) are copied as a zip archive of the same name to the project folder in a single cloud storage.
 
-<details><summary>Поля csv-файла отчёта о выполнении этапа</summary>
+<details><summary>Fields of the stage execution report csv file</summary>
 <p>
-    
+
 `model_building/model_fine_tuning.csv`:
-- `epoch` - номер эпохи обучения;
-- `loss` - значение функции потерь в конце эпохи обучения;
-- `sparse_categorical_accuracy` - точность предсказаний на тренировочном датасете изображений лиц в конце эпохи обучения;
-- `lr` - скорость обучения в течение следующей эпохи обучения;
-- `test_public_score` - точность предсказания модели на публичной части тестового датасета изображений лиц;
-- `test_private_score` - точность предсказания модели на приватной части тестового датасета изображений лиц;
-- `test_score` - средняя точность предсказания модели на тестовом датасета изображений лиц.
+- `epoch` - training epoch number;
+- `loss` - loss function value at the end of the training epoch;
+- `sparse_categorical_accuracy` - prediction accuracy on the training face dataset at the end of the training epoch;
+- `lr` - learning rate during the next training epoch;
+- `test_public_score` - model prediction accuracy on the public part of the test face dataset;
+- `test_private_score` - model prediction accuracy on the private part of the test face dataset;
+- `test_score` - average prediction accuracy on the test face dataset.
 
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
 
 `model_building/model.csv`:
-- `base_model_name` - название базовой модели;
-- `model_on_top_config` - конфигурация блоков слоев исключения и полносвязных слоёв верхней модели в формате:  
-  (`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),  
-где&nbsp;`n` - количество блоков из списка, заданного параметром `MODEL_ON_TOP_DENSE_NUMS`;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - доля обнуляемых при обучении входных нейронов полносвязного слоя в i-ом блоке из списка, &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; заданного параметром `MODEL_ON_TOP_DROPOUT_RATES`;  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - количество выходных нейронов полносвязного слоя в i-ом блоке из списка, заданного параметром &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL_ON_TOP_DENSE_UNITS`;  
-- `best_test_score` - лучшее значение точности предсказаний модели на тестовом датасете.
+- `base_model_name` - the name of the base model;
+- `model_on_top_config` - configuration of the dropout layer blocks and fully connected layers of the top model in the format:
+(`drop_out_rate_1`, `dense_units_1`), (`drop_out_rate_2`, `dense_units_2`), ..., (`drop_out_rate_n`, `dense_units_n`),
+where&nbsp;`n` is the number of blocks from the list specified by the `MODEL_ON_TOP_DENSE_NUMS` parameter;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`drop_out_rate_i` (i=1...n) - the proportion of input neurons of the fully connected layer in the i-th block from the list, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; specified by the `MODEL_ON_TOP_DROPOUT_RATES` parameter, that are reset during training; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`dense_output_i` (i=1...n) - the number of output neurons of the fully connected layer in the i-th block from the list specified by the parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`MODEL_ON_TOP_DENSE_UNITS`;
+- `best_test_score` - the best value of the model's prediction accuracy on the test dataset.
 
 </p>
 </details>
 
-<details><summary>Пример графиков обучения модели</summary>
+<details><summary>Example of model training graphs</summary>
     <p align="center">
         <table>
             <tr>
                 <td>
                     <p align="center"><b>learning rate</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162240-69f4a03f-af7e-486d-b595-3f939339dc95.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162240-69f4a03f-af7e-486d-b595-3f939339dc95.svg>
                 </td>
                 <td>
                     <p align="center"><b>train loss</b></p>
@@ -969,11 +1014,11 @@ MODEL_BUILDING_PIPELINE = {
                     <p align="center"><b>train accuracy</b></p>
                     <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162239-91d315bb-b643-4827-989b-260e99879b2b.svg>
                 </td>
-            </tr>
+                </tr>
             <tr>
                 <td>
                     <p align="center"><b>test public score</b></p>
-                    <img  align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162238-31226353-fb24-4fa6-a855-2dbf3f531e37.svg>
+                    <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/200162238-31226353-fb24-4fa6-a855-2dbf3f531e37.svg>
                 </td>
                 <td>
                     <p align="center"><b>test private score</b></p>
@@ -990,139 +1035,140 @@ MODEL_BUILDING_PIPELINE = {
 
 #### 3.6. Тестирование работы модели (`model_deploy_test`)
 
-Тестирование производится на изображении со встроенной камеры локального компьютера. Поэтому данный этап обязательно должен выполняться на локальном компьютере (настроечный параметр `platform` должен быть равен `local`).
+Testing is performed on an image from the built-in camera of the local computer. Therefore, this stage must be performed on the local computer (the `platform` parameter must be equal to `local`).
 
-Наличие и коррдинаты лица на изображении определяются с помощью детектора лиц [MTCNN](https://github.com/ipazc/mtcnn). Предсказание эмоции, которую выражает лицо, производится с помощью экземпляра класса `FaceEmotionRecognitionNet` на основе созданной модели с "лучшими" весами. 
+The presence and coordinates of a face in the image are determined using the [MTCNN](https://github.com/ipazc/mtcnn) face detector. The emotion that the face expresses is predicted using an instance of the `FaceEmotionRecognitionNet` class based on the created model with the "best" weights.
 
-Изображение с камеры выводится в отдельном окне, которое автоматически открывается при выполнении этапа и закрывается по его завершении. Область лица на изображении выделяется с помощью прямоугольника. Остальная визуальная информация зависит от типа модели.
+The image from the camera is displayed in a separate window, which is automatically opened when the stage is performed and closed upon its completion. The face area in the image is highlighted using a rectangle. The remaining visual information depends on the model type.
 
-##### Тестирование модели [1-го типа](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0%BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82).
-Если вероятность распознования эмоции превышает заданный порог достоверности, определенный параметром параметр `min_probability`, то прямоугольник области лица окрашивается в зелёный цвет. В противном случае этот прямоугольник окрашивается в красный цвет. 
-Над прямоугольником области лица на фоне такого же цвета выводится название распознанной эмоции и в скобках её вероятность. 
+##### Testing the model [1st type](#1-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D 0%BE%D1%80%D0%B0%D1%8F-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6% D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%B B%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D0%BF%D1%80%D0%B5%D0%B4%D1%81%D0%B A%D0%B0%D0%B7%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%B2%D0%B5%D1%80%D0% BE%D1%8F%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D1%8D%D0%BC%D0%BE%D1% 86%D0%B8%D0%B9-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%8B%D0%B5-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82).
+If the probability of recognizing an emotion exceeds the specified reliability threshold, defined by the `min_probability` parameter, the face area rectangle is colored green. Otherwise, this rectangle is colored red.
 
-С левой стороны окна зеленым цветом выводится список эмоций, которые были распознаны с высокой вероятностью (превышающей порог достоверности). Рядом с названием эмоций в скобках выводится значение максимальной вероятности их распознавания. С правой стороны наоборот выводится список эмоций, которые ещё не были достоверно распознаны. Рядом с названиями этих эмоций также в скобках выводится значение максимальной величины вероятности их распознавания.
+The name of the recognized emotion and its probability in brackets are displayed above the face area rectangle on a background of the same color.
 
-Завершить тестирование можно после того, как все эмоции были достоверно распознаны (споровождается появлением в окне надписи "All emotions have been recognized. Press any key to complete."). По нажатию кнопки окно вывода закрывается.
+On the left side of the window, a list of emotions that were recognized with a high probability (exceeding the reliability threshold) is displayed in green. The maximum probability of their recognition is displayed next to the name of the emotions in brackets. On the right side, on the contrary, a list of emotions that have not yet been reliably recognized is displayed. The maximum probability of their recognition is also displayed next to the names of these emotions in brackets.
 
-После этого изображения лица наиболее достоверно выражающие распознаваемые эмоции сохраняются в папку с именем, заданным параметром `path`. Копия этих изображений в виде zip-архива с таким же именем копируется в папку проекта в едином облачном хранилище. Пути к файлам иображений лиц и вероятности распознавания эмоций сохраняются в csv-файле результатов в папке проекта в едином облачном хранилище.
+You can finish testing after all emotions have been reliably recognized (this is indicated by the appearance of the inscription "All emotions have been recognized. Press any key to complete." in the window). By clicking the button, the output window closes.
 
-<details><summary>Поля csv-файла отчёта о выполнении этапа</summary>
+After this, the facial images that most reliably express the recognizable emotions are saved in a folder with the name specified by the `path` parameter. A copy of these images in the form of a zip archive with the same name is copied to the project folder in a single cloud storage. The paths to the facial image files and the probability of emotion recognition are saved in the csv file of the results in the project folder in a single cloud storage.
+
+<details><summary>Stage completion report csv file fields</summary>
 <p>
 
 `model_building/model_deploy_test.csv`:
-- `emotion` - название эмоции;
-- `image` - изображение лица;
-- `probability` - вероятность, с которой была распознана эмоция.
+- `emotion` - emotion name;
+- `image` - face image;
+- `probability` - probability with which the emotion was recognized.
 
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
 
 `model_building/emotion_files.csv`:
-- `emotion` - название эмоции;
-- `image` - путь к файлу изображения лица;
-- `probability` - вероятность, с которой была распознана эмоция.
+- `emotion` - the name of the emotion;
+- `image` - the path to the face image file;
+- `probability` - the probability with which the emotion was recognized.
 
 </p>
 </details>
 
-<details><summary>Примеры внешнего вида окна</summary>
+<details><summary>Examples of window appearance</summary>
 <p align="center">
 <table>
 <tr>
 <td>
-<p align="center"><b>В процессе тестирования</b></p>
+<p align="center"><b>During testing</b></p>
 <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358136-1178be9e-b96d-4722-9058-06592098d9cf.png>
 </td>
 <td>
-<p align="center"><b>По завершении тестирования</b></p>
+<p align="center"><b>Upon completion of testing</b></p>
 <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358122-9b2fc697-a512-4bf5-835a-de7cd7ae564c.png>
 </td>
 </tr>
-</table>        
+</table>
 </p>
 </details>
 
-<details><summary>Примеры "лучших" изображений лица</summary>
+<details><summary>Examples of the “best” facial images</summary>
 <p align="center">
 <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204360816-84a96f46-cdb8-45fc-9560-5c1b01a01be5.png>
 </p>
 </details>
 
-##### Тестирование модели [2-го типа](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%B0%D1%8F-%D0%BC%D0%BE%D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8E-%D0%BB%D0%B8%D1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0%D1%81%D0%BF%D0%BE%D0%B7%D0%BD%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1%82%D0%B5%D0%BD%D1%81%D0%B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1%81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0%BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
-Над прямоугольников области лица в первой строке выводятся значения валентности (`V`) и интенсивности (`A`) эмоции. А во второй строке указывается название эмоции, к типичным значениям валентности и интенсивности они наиболее близки. В скобках указывается расстояние  
-Если расстояние между типичными и определенными моделью значениями валентности и интенсивности эмоции не превышает заданный порог достоверности, определенный параметром параметр `max_error`, то прямоугольник области лица и фон текста окрашивается в зелёный цвет. В противном случае прямоугольник и текст окрашивается в красный цвет. 
+##### Model testing [2nd type](#2-%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C-%D0%BA%D0%BE%D1%82%D0%BE%D1% 80%D0%B0%D1%8F-%D0%BC%D0%BE %D0%B6%D0%B5%D1%82-%D0%BF%D0%BE-%D0%B2%D1%8B%D1%80%D0%B0%D0%B6%D0%B5%D0%BD %D0%B8%D1%8E-%D0%BB%D0%B8%D 1%86%D0%B0-%D1%87%D0%B5%D0%BB%D0%BE%D0%B2%D0%B5%D0%BA%D0%B0-%D1%80%D0%B0% D1%81%D0%BF%D0%BE%D0%B7%D0%B D%D0%B0%D1%82%D1%8C-%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B2%D0%B0%D0% BB%D0%B5%D0%BD%D1%82%D0%BD%D0 %BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-valence-%D0%B8-%D0%B8%D0%BD%D1% 82%D0%B5%D0%BD%D1%81%D0 %B8%D0%B2%D0%BD%D0%BE%D1%81%D1%82%D0%B8-%D0%B0%D0%BD%D0%B3%D0%BB-arousal-%D1%8D %D0%BC%D0%BE%D1%86%D0% B8%D0%B8-%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D1%83%D1%8E-%D0%BE%D0%BD-%D0%B8%D1 %81%D0%BF%D1%8B%D1%82%D1%8B%D0%B2%D0%B0%D0%B5%D1%82-%D0%BF%D0%BE-%D1%88%D0 %BA%D0%B0%D0%BB%D0%B5-%D0%BE%D1%82--1-%D0%B4%D0%BE-1).
+Above the rectangles of the face area in the first line the valence values ​​are displayed ( `V`) and intensity (`A`) of emotion. And in the second line the name of the emotion is indicated, they are closest to the typical values ​​of valence and intensity. The distance is indicated in brackets
+If the distance between the typical and model-defined values ​​of valence and intensity of emotion does not exceed the specified reliability threshold, defined by the parameter `max_error`, then the face area rectangle and the text background are colored green. Otherwise, the rectangle and text are colored red color.
 
-С левой стороны окна зеленым цветом выводится список эмоций, которые были достоверно распознаны (расстояние наиболее близких полученных значений валентности и интенсивности к типичным значениям валентности и интенсивности не превышает порога достоверности). Рядом с названием эмоций в скобках выводится значение "лучшие" значения валентности и интенсивности. С правой стороны наоборот выводится список эмоций, которые ещё не были достоверно распознаны. Рядом с названиями этих эмоций также в скобках выводится значение "лучших" величин валентности и интенсивности.
+On the left side of the window, a list of emotions that were reliably recognized is displayed in green (the distance of the closest obtained valence and intensity values ​​to the typical valence and intensity values ​​does not exceed the reliability threshold). Next to the name of the emotions, the value of the "best" valence values ​​is displayed in brackets and intensity. On the right side, on the contrary, a list of emotions is displayed that have not yet been reliably recognized. Next to the names of these emotions, the value of the "best" valence and intensity values ​​is also displayed in brackets.
 
-Также как и в случае тестирования модели 1-го типа тестирование может быть завершено пользователем только после того как все эмоции были достоверно распознаны. После этого "лучшие" изображения лица также сохраняются в папке проекта на плаформе исполнения и в едином облачном хранилище. 
+Just as in the case of testing the type 1 model, testing can be completed by the user only after all emotions have been reliably recognized. After this, the "best" facial images are also saved in the project folder on the execution platform and in a single cloud storage.
 
-<details><summary>Поля csv-файла отчёта о выполнении этапа</summary>
+<details><summary>Stage execution report csv file fields</summary>
 <p>
 
 `model_building/model_deploy_test.csv`:
-- `emotion` - название эмоции;
-- `image` - изображение лица;
-- `error` - расстояние между типичными и распознанными значениями валентности и интенсивности эмоции;
-- `valence` - валентность, распознанной эмоции;
-- `arousal` - интенсивность, распознанной эмоции.
-    
+- `emotion` - emotion name;
+- `image` - face image;
+- `error` - distance between typical and recognized values ​​of valence and intensity of emotion;
+- `valence` - valence of recognized emotion;
+- `arousal` - intensity of recognized emotion.
+
 </p>
 </details>
 
-<details><summary>Поля csv-файла результатов выполнения этапа</summary>
+<details><summary>Fields of the csv file of the stage execution results</summary>
 <p>
-    
+
 `model_building/emotion_files.csv`:
-- `emotion` - название эмоции;
-- `image` - путь к файлу изображения лица;
-- `error` - расстояние между типичными и распознанными значениями валентности и интенсивности эмоции;
-- `valence` - валентность, распознанной эмоции;
-- `arousal` - интенсивность, распознанной эмоции.
-    
+- `emotion` - the name of the emotion;
+- `image` - the path to the face image file;
+- `error` - the distance between typical and recognized values ​​of valence and intensity of emotion;
+- `valence` - the valence of the recognized emotion;
+- `arousal` - the intensity of the recognized emotion.
+
 </p>
 </details>
 
-<details><summary>Примеры внешнего вида окна</summary>
+<details><summary>Examples of window appearance</summary>
 <p align="center">
 <table>
 <tr>
 <td>
-<p align="center"><b>В процессе тестирования</b></p>
+<p align="center"><b>Under testing</b></p>
 <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358144-a0d4f282-84d9-4879-9b47-1fa3f4709131.png>
 </td>
 <td>
-<p align="center"><b>По завершении тестирования</b></p>
+<p align="center"><b>Upon completion of testing</b></p>
 <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204358140-37ff0cf8-7f70-4a75-966b-1aa2aaf9300c.png>
 </td>
 </tr>
-</table>        
+</table>
 </p>
 </details>
 
-<details><summary>Примеры "лучших" изображений лица</summary>
+<details><summary>Examples of the “best” facial images</summary>
 <p align="center">
 <img align="center" width=100% src=https://user-images.githubusercontent.com/107345313/204360810-2e86e4c3-e5bd-4fbe-8dbf-5d9ecf614c8c.png>
 </p>
 </details>
 
-## Использование
+## Usage
 
-Для использования ноутбука достаточно выполнить следующие подготовительные действия:
+To use the notebook, simply complete the following steps:
 
-1. Подготовить пустое хранилище на платформе [Google Диск](https://drive.google.com/).
-2. Установить на компьютер программу [Google Диск](https://drive.google.com/) и подключить подготовленное хранилище в качестве логического диска на локальном компьютере.
-3. Зарегистрироваться на платформе [Google Colab](https://colab.research.google.com/) под тем же пользователем, что и на платформе [Google Диск](https://drive.google.com/). 
-4. Зарегистрироваться на платформе [Kaggle](https://www.kaggle.com).
-5. Стать участником соревнования [skillbox-computer-vision-project](https://www.kaggle.com/c/skillbox-computer-vision-project).
-6. Создать API Token в настройках профиля на платформе [Kaggle](https://www.kaggle.com) и скопировать его в облачное хранилище [Google Диск](https://drive.google.com/).
-7. Открыть ноутбук удаленно в [Google Colab](https://colab.research.google.com/) или на локальном компьютере в [JupyterNotebook](https://jupyter.org/) или [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/index.html).
-8. В настройках проекта указать ссылку на API Token в облачном хранилище [Google Диск](https://drive.google.com/).
-9. Выполнить задание основных настроек (краткое назначение настроек указано в комментариях к ним, а более подробное описание приведено выше в тексте данного документа.
-10. В настройках каждого этапа указать на какой платформе будет он будет выполняться.
+1. Prepare an empty storage on the [Google Drive](https://drive.google.com/) platform.
+2. Install the [Google Drive](https://drive.google.com/) application on your computer and connect the prepared storage as a logical drive on your local computer.
+3. Register on the [Google Colab](https://colab.research.google.com/) platform under the same user as on the [Google Drive](https://drive.google.com/) platform.
+4. Register on the [Kaggle](https://www.kaggle.com) platform.
+5. Take part in the [skillbox-computer-vision-project](https://www.kaggle.com/c/skillbox-computer-vision-project) competition.
+6. Create an API Token in your profile settings on the [Kaggle](https://www.kaggle.com) platform and copy it to the [Google Drive](https://drive.google.com/) cloud storage.
+7. Open the notebook remotely in [Google Colab](https://colab.research.google.com/) or on your local computer in [JupyterNotebook](https://jupyter.org/) or [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/index.html).
+8. In the project settings, specify a link to the API Token in the [Google Drive](https://drive.google.com/) cloud storage.
+9. Complete the basic settings (a brief purpose of the settings is given in the comments to them, and a more detailed description is given above in the text of this document).
+10. In the settings of each stage, specify on which platform it will be executed.
 
-## Направления дальнейшего развития
+## Directions for further development
 
-Хотя ноутбук и был разработан для решения конкретной задачи, он может быть достаточно легко адаптирован для решения любой другой задачи классификации изображений. Для этого необходимо заменить механизм получения точности предсказаний модели на тестовых данных (класс `Kaggle`) и использовать его экземпляр в классе ранней остановки обучения при отстутствии увеличения точности предсказаний `EarlyStoppingAtMaxTestScore`.
+Although the notebook was developed to solve a specific problem, it can be easily adapted to solve any other image classification problem. To do this, it is necessary to replace the mechanism for obtaining the accuracy of the model's predictions on test data (the `Kaggle` class) and use its instance in the early stopping class in the absence of an increase in the accuracy of predictions `EarlyStoppingAtMaxTestScore`.
