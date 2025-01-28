@@ -5,19 +5,19 @@ import textwrap
 
 def wrap_text(text, length=50):
     '''
-    The function splits the text into lines of a given length and replaces line breaks with an HTML elemen <br>
+    Функция разбивает текст на строки заданной длины и заменяет символы переноса строки на HTML-элемент <br>
 
-        Parameters:
+        Параметры:
         ----------
         text : string
-            Text to process.
+            Обрабатываемый текст.
 
         length : int
-            Lines maximum length
+            Максимальная длина строк
 
-        Returns:
+        Возвращаемый результат:
         -----------------------
-            String object.
+            Объект типа string.
     '''
     return textwrap.fill(text, length).replace('\n', '<br>')
 
@@ -84,7 +84,7 @@ def set_widget_style(widget_text, font_family: str = None, font_size: int = None
 
 def hide_menu_button():
     """
-    Hides the menu button.
+    Скрывает кнопку вызова меню.
     """
     st.markdown(
         """
@@ -100,7 +100,7 @@ def hide_menu_button():
 
 def remove_blank_space():
     """
-    Removes white space at the top of the page.
+    Удаляет пустое пространство вверху страницы.
     """
     st.markdown(f'''
                 <style>
