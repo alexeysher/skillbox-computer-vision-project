@@ -142,7 +142,7 @@ When constructing the model [2nd type](#2-a-model-that-can-recognize-the-valence
 
 Additionally in In order to improve the quality of model training by increasing the diversity of input images, an augmentation model is added to the base model. This model randomly transforms the input image during training before feeding it to the base model. The augmentation model randomly rotates the image slightly , changes its contrast and brightness, and also mirrors it. The user can define the ranges of these transformations in the project settings.
 
-<details><summary>Пример настройки аугментации входных изображений</summary>
+<details><summary>Example of setting up input image augmentation</summary>
 <p>
     
 ```python
