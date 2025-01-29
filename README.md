@@ -330,7 +330,7 @@ KERAS_BASE_MODELS_PROCESSING_PIPELINE = {
         },
         {
             'name': 'inference_time_measuring',
-            'description': 'Measuring model inference time',
+            'description': 'Measuring of model inference time',
             'platform': 'colab', # Runs in Google Colab
             'params': {
                 'batch_size': 1, # Batch size
@@ -373,7 +373,7 @@ The second goal is to obtain information about the sizes of feature vectors at t
 </p>
 </details>
 
-#### 1.2. Measuring inference time (`inference_time_measuring`)
+#### 1.2. Measuring of inference time (`inference_time_measuring`)
 The goal of this step is to estimate the inference time of a model consisting of a base model combined with the "heaviest" upper model (the model containing the maximum number of fully connected layers of the maximum size). This information allows us to exclude base models with insufficient performance from further consideration.
 
 <details><summary>Fields of the csv file of the step execution results</summary>
