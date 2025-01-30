@@ -233,10 +233,10 @@ def results():
     c1.markdown('<h3 style="text-align:center">In process</h3>', unsafe_allow_html=True)
     c1.image('https://user-images.githubusercontent.com/107345313/'
              '204358144-a0d4f282-84d9-4879-9b47-1fa3f4709131.png')
-    c2.markdown('<h3 style="text-align:center">По завершении</h3>', unsafe_allow_html=True)
+    c2.markdown('<h3 style="text-align:center">At the end</h3>', unsafe_allow_html=True)
     c2.image('https://user-images.githubusercontent.com/107345313/'
              '204358140-37ff0cf8-7f70-4a75-966b-1aa2aaf9300c.png')
-    c3.markdown('<h3 style="text-align:center">Result</h3>', unsafe_allow_html=True)
+    c3.markdown('<h3 style="text-align:center">Results</h3>', unsafe_allow_html=True)
     c3.image('https://user-images.githubusercontent.com/107345313/'
              '204360810-2e86e4c3-e5bd-4fbe-8dbf-5d9ecf614c8c.png')
 
