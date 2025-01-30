@@ -20,9 +20,11 @@ def concept():
     c1, c2 = st.columns(2, gap='medium')
     with c1:
         st.markdown('<h2 style="text-align:center">1st type</h2>', unsafe_allow_html=True)
+        st.markdown('---')
         st.markdown('### Predicts the probability of human emotion based on facial expression')
     with c2:
         st.markdown('<h2 style="text-align:center">2nd type</h2>', unsafe_allow_html=True)
+        st.markdown('---')
         st.markdown('### Predicts levels of valence and intensity (arousal) of human emotion based on facial expression')
     c1, c2 = st.columns(2, gap='medium')
     st.markdown('<h3 style="text-align:center; color:darkorange">Learning</h3>', unsafe_allow_html=True)
