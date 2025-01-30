@@ -215,7 +215,7 @@ def results():
     st.markdown('<h1 style="text-align:center; color:blue">Model selection</h2>', unsafe_allow_html=True)
     c1, c2 = st.columns(2)
     c1.markdown('<h2 style="text-align:center">Base model</h3>', unsafe_allow_html=True)
-    c1.markdown("#### :orange[1st type]: EfficientNetB0, input=224, feature size=1280")
+    c1.markdown("### :orange[1st type]: EfficientNetB0, input=224, feature size=1280")
     c1.markdown("#### :orange[2nd type]: EfficientNetB0, input=224, feature size=1280")
     c2.markdown('<h2 style="text-align:center">On top model</h3>', unsafe_allow_html=True)
     c2.markdown("#### :orange[1st type]: (dropout=0.0, units=512), (dropout=0.0, units=256)")
