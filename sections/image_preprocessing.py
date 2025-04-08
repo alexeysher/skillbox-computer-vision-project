@@ -116,8 +116,6 @@ st.markdown(
     
     Similar to [previous](#extracting-face-images-from-the-train-dataset) stage during the execution of the stage
     the test dataset of face images was build.
-    
-    Within this work all images were successfully processed.  
     '''
 )
 
@@ -201,7 +199,7 @@ with st.expander('See details...'):
 
 st.markdown(
     '''
-    Too similar face images were identified according to the following rule. Such images include pairs of images, 
+    Too similar face images were identified according to the following rule. Such images included pairs of images, 
     the [cosine distance](https://wiki5.ru/wiki/Cosine_similarity) between which exceeds the upper reliability limit.
     Only one image with the higher index from each such pair were excluded from the train datasets.
     '''
@@ -518,6 +516,17 @@ with st.expander('See details...'):
 st.markdown(
     '''
     ## Results
+    
+    For further work, the datasets of extracted faces from original images and the datasets of its features
+    were created.
+    
+    From this datasets failed face images were excluded:
+    - that duplicate (too similar) the other ones; 
+    - that too different from other ones (wrongly labeled, or badly extracted).
+    
+    The below charts demonstrates quantitative compositions of created datasets.
+    
+    ### Datasets quantitative compositions charts
     '''
 )
 

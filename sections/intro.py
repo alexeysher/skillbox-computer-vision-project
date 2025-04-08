@@ -28,6 +28,9 @@ st.markdown(
     [README](https://github.com/alexeysher/skillbox-computer-vision-project/edit/main/README.md).
     The models were developed using [Jupyter Notebook]() and [Google Colab](https://colab.research.google.com/) tools. 
     
+    The models were created using the [Transfer Learning](https://keras.io/guides/transfer_learning/) and 
+    [Fine Tuning](https://keras.io/guides/transfer_learning/) approaches.
+
     The model creation process is divided into three independent parts (pipelines), 
     which should be performed sequentially:
     1. [Base model selection](base_model_selection#base-model-selection)
@@ -36,7 +39,7 @@ st.markdown(
     
     The both developed models shows very good evaluation results on the 
     [test data](http://localhost:8501/provided_data#test-data).
-    They got `0.5200` and `0.4892` scores, respectively, while the required one is `0.4`.
+    They got `0.5146` and `0.4846` scores, respectively, while the required one is `0.4`.
     
     The ready-to-user models were deployed on [Google Cloud Vertex AI Platform](https://cloud.google.com/vertex-ai).
     

@@ -263,7 +263,7 @@ with st.expander('See details...'):
 
     st.markdown(
         '''
-        The obtained scores and ranks for the base models are listed below:.
+        The obtained scores and ranks for the base models are listed below:
         ''',
         unsafe_allow_html=True
     )
@@ -304,7 +304,7 @@ with st.expander('See details...'):
 st.markdown(
     '''            
     ## Results
-    
+
     For further work, the models with rank #1 were selected, 
     i.e. the models witch had the best weighted score for accuracy and performance:
     - [EfficientNetB0](https://keras.io/2.18/api/applications/efficientnet/) - for the [1st type](intro#1st-type)

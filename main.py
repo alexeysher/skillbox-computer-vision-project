@@ -105,7 +105,8 @@ def load_data():
         df.drop(columns=[0, 1], inplace=True)
         df.index = df.apply(
             lambda config:
-            f'({config[0]}, {config[1]})' + (f', ({config[2]}, {config[3]})' if not np.isnan(config[2]) else ''),
+            f'({config.iloc[0]}, {config.iloc[1]})' +
+            (f', ({config.iloc[2]}, {config.iloc[3]})' if not np.isnan(config.iloc[2]) else ''),
             axis=1
         )
         df = df.convert_dtypes()
@@ -433,6 +434,39 @@ def load_data():
         return df
 
     st.session_state.model_on_top_selection_logs = _load_model_on_top_selection_logs()
+
+    # model fine-tuning
+    @st.cache_data(show_spinner=False)
+    def _load_model_fine_tuning():
+        file = st.session_state.google_cloud.open_file('classification/model_building/tuned_model.csv')
+        df_1 = pd.read_csv(
+            file, usecols=['best_epoch', 'best_loss' ,'best_metric'])
+        file.close()
+        file = st.session_state.google_cloud.open_file('classification/model_building/test_scoring.csv')
+        df_1 = df_1.merge(
+            pd.read_csv(file, usecols=['score']), left_index=True, right_index=True,
+        )
+        file.close()
+
+        file = st.session_state.google_cloud.open_file('va/model_building/tuned_model.csv')
+        df_2 = pd.read_csv(
+            file, usecols=['best_epoch', 'best_loss' ,'best_metric'])
+        file.close()
+        file = st.session_state.google_cloud.open_file('va/model_building/test_scoring.csv')
+        df_2 = df_2.merge(
+            pd.read_csv(file, usecols=['score']), left_index=True, right_index=True,
+        )
+        file.close()
+
+        df = pd.merge(df_1, df_2, left_index=True, right_index=True)
+        columns = pd.MultiIndex.from_tuples(
+            [(1, column) for column in df_1.columns] + [(2, column) for column in df_2.columns],
+            names=['type', 'param']
+        )
+        df.columns = columns
+        return df
+
+    st.session_state.model_fine_tuning = _load_model_fine_tuning()
 
     @st.cache_data(show_spinner=False)
     def _load_model_fine_tuning_logs():

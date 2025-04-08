@@ -36,8 +36,8 @@ st.plotly_chart(fig, use_container_width=False)
 st.markdown(
     '''
     Such dataset is suitable only for training the 1st type model.
-    To train the 2nd type model images were labeled with typical values of the valence and arousal of
-    emotion witch they belongs:
+    To train the 2nd type model the images were labeled with typical values of the valence and arousal 
+    of emotion to which they belong:
     '''
 )
 
@@ -72,9 +72,9 @@ with col2:
     fig.update_xaxes(range=(-1.1, 1.1), title='Valence', showgrid=True)
     fig.update_yaxes(range=(-1.1, 1.1), title='Arousal')
     fig.update_layout(
-        width=(df.shape[0] + 1) * 35,
-        height=(df.shape[0] + 1) * 35,
-        margin_t=25, margin_r=0, margin_b=0, margin_l=0
+        width=(df.shape[0] + 1) * 35 - 20,
+        height=(df.shape[0] + 1) * 35 + 2,
+        margin_t=40, margin_r=0, margin_b=0, margin_l=0
     )
     st.plotly_chart(fig, use_container_width=False)
 
@@ -85,21 +85,25 @@ st.markdown(
     To evaluate the quality of the model during the training process, the dataset attached to the competition 
     [skillbox-computer-vision-project](https://www.kaggle.com/competitions/skillbox-computer-vision-project/data) 
     is also used. The dataset is also a set of files. It contains 5000 items.But they have no label. 
-    
-    The quality of the model's prediction can only be assessed on the platform itself.
-    The evaluation perform by categorisation accuracy metric:    
+    Thus the quality of the model's prediction can only be assessed on the platform itself.
+    The evaluation performs by categorisation accuracy metric:    
     '''
 )
 
 st.latex(
     r'''
-    \dfrac{\sum{[y_{true} == y_{pred}]}}{len(y_{true})}
+    accuracy(y, \hat{y}) = \dfrac{\sum_{i=1}^{n}{y_i=\hat{y_i}}}{n},
     '''
 )
 
 st.markdown(
+    'where $y$ - set of true values, $\hat{y}$ - set of predicted values, $n$ - number of samples in the sets, '
+    '$y_i$, $\hat{y_i}$ - $i$-th samples of the sets.'
+)
+
+st.markdown(
     '''
-    Thus a test submission should contains labeled by emotion for each test image.
+    Thus a test submission should contains predicted emotion for each test image.
     
     So in the test submission for the 1st type model each image was labeled by the most probable emotion from prediction.
     In the test submission for the 2nd type model each image was labeled by emotion

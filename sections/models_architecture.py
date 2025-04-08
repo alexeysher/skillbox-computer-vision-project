@@ -7,7 +7,7 @@ st.markdown(
     '''
     # Models architecture
     
-    The models were created using the [Transfer Learning](https://keras.io/guides/transfer_learning/) and 
+    As mentioned earlier, the models were created using the [Transfer Learning](https://keras.io/guides/transfer_learning/) and 
     [Fine Tuning](https://keras.io/guides/transfer_learning/) approaches. 
     That is, the models were not created from scratch, but based on a pretrained models, 
     the so-called *base models*. Any model from the [Keras Applications](https://keras.io/api/applications/) 
@@ -64,7 +64,7 @@ st.markdown(
     The last, fully connected layer (*dense layer*) with the 
     [SoftMax](https://en.wikipedia.org/wiki/Softmax_function) activation function, 
     located as if on top of the model, is responsible for identifying the object based on its features. 
-    Since the model being built solves a completely different_images problem, 
+    Since the model being built solves a completely different problem, 
     this fully connected layer is not needed in the resulting model. 
     Therefore, only the convolutional part of the base model is used. 
     At the top of the convolutional part is the pooling layer. 
@@ -116,11 +116,11 @@ with st.expander('See list of Models On Top...'):
 
 st.markdown(
     '''
-    Additionally in In order to improve the quality of model training by increasing the diversity of input images, 
+    Additionally in order to improve the quality of model training by increasing the diversity of input images, 
     an augmentation model is added to the base model. This model randomly transforms 
     the input image during training before feeding it to the base model. 
     The augmentation model randomly rotates the image slightly, changes its contrast and brightness, 
-    and also mirrors it. The user can define the ranges of these transformations in the project settings.
+    and also mirrors it.
     '''
 )
 

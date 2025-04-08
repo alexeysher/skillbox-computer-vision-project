@@ -307,7 +307,7 @@ class Predictions(PredictionsBase):
     Emotion names in processed video
     """
 
-    _gc_folder_path = 'predictions'
+    _gc_folder_path = 'classification/presentation/video/predictions'
     _file_path = 'data/predictions.dat'
     _columns = [
         'emotion', 'probability', 'filtered_emotion', 'filtered_probability'
@@ -336,8 +336,8 @@ class PredictionsVa(PredictionsBase):
     Emotions arousal in processed video
     """
 
-    _gc_folder_path = 'predictions_va'
-    _file_path = 'data/predictions_va.dat'
+    _gc_folder_path = 'va/presentation/video/predictions'
+    _file_path = 'data/predictions.dat'
     _columns = [
         'arousal', 'valence', 'filtered_arousal', 'filtered_valence'
     ] + PredictionsBase._columns
@@ -434,7 +434,7 @@ class HyperParams(HyperParamsBase):
     Hyperparameters for searching fragments to trailer creation
     """
 
-    _gc_folder_path = 'hyperparams'
+    _gc_folder_path = 'classification/presentation/video/hyperparams'
     _file_path = 'data/hyperparams.dat'
     _names = [
         'emotions',
@@ -499,7 +499,7 @@ class HyperParamsVa(HyperParamsBase):
     Hyperparameters for searching fragments to trailer creation
     """
 
-    _gc_folder_path = 'hyperparams_va'
+    _gc_folder_path = 'va/presentation/video/hyperparams'
     _file_path = 'data/hyperparams_va.dat'
     _names = [
        'emotion_valence',
@@ -735,7 +735,7 @@ class FragmentsBase(Storable):
 
 class Fragments(FragmentsBase):
 
-    _gc_folder_path = 'fragments'
+    _gc_folder_path = 'classification/presentation/video/fragments'
     _file_path = 'data/fragments.dat'
     _columns = [
         'emotion', 'start_step', 'peak_step', 'end_step', 'steps',
@@ -902,7 +902,7 @@ class Fragments(FragmentsBase):
 
 class FragmentsVa(FragmentsBase):
 
-    _gc_folder_path = 'fragments_va'
+    _gc_folder_path = 'va/presentation/video/fragments'
     _file_path = 'data/fragments_va.dat'
     _columns = [
         'start_step', 'peak_step', 'end_step', 'steps',
@@ -1171,7 +1171,7 @@ class TrailerBase(Storable):
 
 class Trailer(TrailerBase):
 
-    _gcs_screenshots_path = 'screenshots'
+    _gcs_screenshots_path = 'classification/presentation/video/screenshots'
     _screenshots_path = 'data/screenshots'
     _file_path = 'data/trailer.dat'
     trailer_file_path = 'data/trailer.mp4'
@@ -1182,7 +1182,7 @@ class Trailer(TrailerBase):
 
 class TrailerVa(TrailerBase):
 
-    _gcs_screenshots_path = 'screenshots_va'
+    _gcs_screenshots_path = 'va/presentation/video/screenshots'
     _screenshots_path = 'data/screenshots_va'
     _file_path = 'data/trailer_va.dat'
     trailer_file_name = 'data/trailer_va.mp4'
