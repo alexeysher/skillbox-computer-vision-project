@@ -1,6 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
-import textwrap
 from pathlib import Path
 from google.cloud import storage
 from google.cloud import aiplatform
