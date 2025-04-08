@@ -81,7 +81,7 @@ with st.expander('See details...'):
     st.dataframe(
         df,
         hide_index=True,
-        column_config=config,
+        # column_config=config,
         use_container_width=True,
         row_height=100
     )
