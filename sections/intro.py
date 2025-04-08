@@ -24,12 +24,13 @@ st.markdown(
     and arousal (refers an emotion intensity, i.e., the strength of the associated emotional state).
     Both the metrics have scale from -1 to +1.
     
-    Within the work the [notebooks]() were developed. For more details please see 
-    [README](https://github.com/alexeysher/skillbox-computer-vision-project/edit/main/README.md).
+    Within the work the [notebooks](https://github.com/alexeysher/skillbox-computer-vision-project) were developed. 
     The models were developed using [Jupyter Notebook]() and [Google Colab](https://colab.research.google.com/) tools. 
     
-    The models were created using the [Transfer Learning](https://keras.io/guides/transfer_learning/) and 
-    [Fine Tuning](https://keras.io/guides/transfer_learning/) approaches.
+    The models were created using [Keras](https://keras.io/api/) and 
+    [TensorFlow](https://www.tensorflow.org/api_docs/python/tf) frameworks.
+    The [Transfer Learning](https://keras.io/guides/transfer_learning/) and 
+    [Fine Tuning](https://keras.io/guides/transfer_learning/) approaches were applied.
 
     The model creation process is divided into three independent parts (pipelines), 
     which should be performed sequentially:
